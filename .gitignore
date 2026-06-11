@@ -1,0 +1,19 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+
+# Editors
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Node (caso adicione build step no futuro)
+node_modules/
+dist/
+.env
+.env.local
+.env.production
