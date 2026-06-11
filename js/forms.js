@@ -1,4 +1,4 @@
-/* PrimeTI Tecnologia — forms.js
+/* RM PrimeTI Tecnologia — forms.js
    Integração Supabase: leads, newsletter, page views */
 
 (function () {

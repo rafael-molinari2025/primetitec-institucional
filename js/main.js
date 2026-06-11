@@ -1,4 +1,4 @@
-/* PrimeTI Tecnologia — main.js */
+/* RM PrimeTI Tecnologia — main.js */
 
 /* ============================================================
    PARTICLE CANVAS

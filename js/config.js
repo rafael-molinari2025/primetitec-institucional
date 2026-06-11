@@ -1,5 +1,5 @@
 /**
- * PrimeTI Tecnologia — Configuração Supabase
+ * RM PrimeTI Tecnologia — Configuração Supabase
  *
  * COMO CONFIGURAR:
  * 1. Acesse https://supabase.com e crie um projeto gratuito

@@ -1,5 +1,5 @@
 -- ============================================================
--- PrimeTI Tecnologia — Supabase Schema (idempotente)
+-- RM PrimeTI Tecnologia — Supabase Schema (idempotente)
 -- Pode ser executado múltiplas vezes sem erros.
 -- Como usar: SQL Editor do Supabase → cole tudo → Run
 -- ============================================================
