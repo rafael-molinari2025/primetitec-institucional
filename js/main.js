@@ -1,6 +1,222 @@
 /* RM PrimeTI Tecnologia — main.js */
 
 /* ============================================================
+   PRELOADER
+   ============================================================ */
+(function initPreloader() {
+  const pl = document.getElementById('preloader');
+  if (!pl) return;
+  const hide = () => pl.classList.add('out');
+  if (document.readyState === 'complete') {
+    setTimeout(hide, 1200);
+  } else {
+    window.addEventListener('load', () => setTimeout(hide, 1200));
+  }
+})();
+
+/* ============================================================
+   COOKIE BANNER + ANALYTICS CONSENT
+   ============================================================ */
+(function initCookies() {
+  const banner  = document.getElementById('cookieBanner');
+  if (!banner) return;
+
+  const stored = localStorage.getItem('primetiti_cookies');
+  if (stored === 'yes')  { banner.classList.add('hidden'); loadAnalytics(); return; }
+  if (stored === 'no')   { banner.classList.add('hidden'); return; }
+
+  // First visit — show after 2s
+  setTimeout(() => banner.classList.add('visible'), 2000);
+
+  document.getElementById('cookieAccept')?.addEventListener('click', () => {
+    localStorage.setItem('primetiti_cookies', 'yes');
+    banner.classList.remove('visible');
+    setTimeout(() => banner.classList.add('hidden'), 500);
+    loadAnalytics();
+  });
+
+  document.getElementById('cookieDecline')?.addEventListener('click', () => {
+    localStorage.setItem('primetiti_cookies', 'no');
+    banner.classList.remove('visible');
+    setTimeout(() => banner.classList.add('hidden'), 500);
+  });
+})();
+
+function loadAnalytics() {
+  // ── Google Analytics 4 ──────────────────────────────────
+  // Substitua 'G-XXXXXXXXXX' pelo seu Measurement ID
+  // Obtido em: analytics.google.com → Admin → Data Streams
+  const GA_ID = 'G-XXXXXXXXXX';
+  if (GA_ID !== 'G-XXXXXXXXXX') {
+    const s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    s.async = true;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+
+  // ── Microsoft Clarity ───────────────────────────────────
+  // Substitua 'XXXXXXXXXX' pelo seu Project ID
+  // Obtido em: clarity.microsoft.com → seu projeto → Settings
+  const CLARITY_ID = 'XXXXXXXXXX';
+  if (CLARITY_ID !== 'XXXXXXXXXX') {
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,'clarity','script',CLARITY_ID);
+  }
+}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+(function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 450);
+  }, { passive: true });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+(function initFaq() {
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item   = this.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // close others
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        i.querySelector('i').className = 'fas fa-plus';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+        this.querySelector('i').className = 'fas fa-minus';
+      }
+    });
+  });
+})();
+
+/* ============================================================
+   TESTIMONIALS CAROUSEL
+   ============================================================ */
+(function initTestimonials() {
+  const track  = document.getElementById('testimonialsTrack');
+  const dots   = document.getElementById('testDots');
+  const prev   = document.getElementById('prevTest');
+  const next   = document.getElementById('nextTest');
+  if (!track) return;
+
+  const cards  = track.querySelectorAll('.testimonial-card');
+  let cur      = 0;
+  let timer;
+
+  // wrap track so overflow hidden works
+  const outer = track.parentElement;
+  outer.style.overflow = 'hidden';
+  outer.style.borderRadius = '16px';
+
+  // build dots
+  cards.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'test-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Depoimento ' + (i + 1));
+    d.addEventListener('click', () => { stop(); goTo(i); start(); });
+    dots.appendChild(d);
+  });
+
+  function goTo(idx) {
+    cur = (idx + cards.length) % cards.length;
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    dots.querySelectorAll('.test-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === cur)
+    );
+  }
+  function start() { timer = setInterval(() => goTo(cur + 1), 4800); }
+  function stop()  { clearInterval(timer); }
+
+  prev?.addEventListener('click', () => { stop(); goTo(cur - 1); start(); });
+  next?.addEventListener('click', () => { stop(); goTo(cur + 1); start(); });
+  track.addEventListener('mouseenter', stop);
+  track.addEventListener('mouseleave', start);
+
+  // touch/swipe support
+  let touchX = 0;
+  track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; stop(); }, { passive: true });
+  track.addEventListener('touchend',   e => {
+    const diff = touchX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(diff > 0 ? cur + 1 : cur - 1);
+    start();
+  }, { passive: true });
+
+  start();
+})();
+
+/* ============================================================
+   QUICK QUOTE FORM
+   ============================================================ */
+(function initQuickQuote() {
+  const form   = document.getElementById('quickQuoteForm');
+  const status = document.getElementById('qqStatus');
+  const btn    = document.getElementById('qqSubmitBtn');
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const nome     = form.querySelector('#qq-nome').value.trim();
+    const telefone = form.querySelector('#qq-whats').value.trim();
+    const servico  = form.querySelector('#qq-servico').value;
+    const mensagem = form.querySelector('#qq-descricao').value.trim();
+
+    if (!nome || !telefone || !servico) {
+      showQQStatus('error', 'Preencha os campos obrigatórios (*).');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.querySelector('span').textContent = 'Enviando…';
+
+    try {
+      if (typeof supabase !== 'undefined') {
+        await supabase.from('leads').insert({
+          nome, telefone, servico,
+          mensagem: mensagem || 'Orçamento rápido via site',
+          origem: 'orcamento_rapido'
+        });
+      }
+      showQQStatus('success', '✓ Solicitação recebida! Entraremos em contato em breve.');
+      form.reset();
+    } catch (_) {
+      // fallback: open WhatsApp
+      const txt = encodeURIComponent('Olá! Sou ' + nome + ', tenho interesse em: ' + servico + '. ' + mensagem);
+      window.open('https://wa.me/5531990656645?text=' + txt, '_blank');
+      showQQStatus('success', '✓ Redirecionando para o WhatsApp…');
+    } finally {
+      btn.disabled = false;
+      btn.querySelector('span').textContent = 'Solicitar Orçamento Grátis';
+    }
+  });
+
+  function showQQStatus(type, msg) {
+    if (!status) return;
+    status.className = 'form-status ' + (type === 'success' ? 'status-ok' : 'status-err');
+    status.textContent = msg;
+    if (type === 'success') setTimeout(() => { status.textContent = ''; status.className = 'form-status'; }, 6000);
+  }
+})();
+
+/* ============================================================
    PARTICLE CANVAS
    ============================================================ */
 (function initParticles() {
