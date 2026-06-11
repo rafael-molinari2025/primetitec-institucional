@@ -11,5 +11,5 @@
  * (protegida por Row Level Security no Supabase)
  */
 
-const SUPABASE_URL      = 'https://SEU_PROJECT_ID.supabase.co';
-const SUPABASE_ANON_KEY = 'SUA_ANON_KEY_AQUI';
+const SUPABASE_URL      = 'https://bqqixufdwwnxacppdeug.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxcWl4dWZkd3dueGFjcHBkZXVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExODQ5MzMsImV4cCI6MjA5Njc2MDkzM30.6jPmAwgQBwwzI4U7vbEE0xHA2rfB5wVxBlE9YOhqXfU';
