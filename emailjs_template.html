@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+  RM PrimeTI Tecnologia — Template de E-mail (Newsletter)
+
+  Como usar:
+  1. Acesse https://www.emailjs.com → Email Templates → Create New Template
+  2. Em "Content", selecione "HTML Editor" e cole TODO o conteúdo abaixo
+  3. Em "To Email" coloque: {{to_email}}
+  4. Em "Subject" coloque: ✅ Inscrição confirmada — RM PrimeTI Tecnologia
+  5. Em "Reply To" coloque: comercial@primetitec.com.br
+  6. Clique em "Save"
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin: 0; padding: 0; background: #f4f6f9; font-family: 'Segoe UI', Arial, sans-serif; }
+    .wrapper { max-width: 600px; margin: 32px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .header { background: linear-gradient(135deg, #060612 0%, #0d0d2b 100%); padding: 40px 40px 32px; text-align: center; }
+    .logo-hex { display: inline-block; margin-bottom: 16px; }
+    .header h1 { color: #ffffff; font-size: 22px; margin: 0 0 6px; font-weight: 700; }
+    .header p { color: #00d4ff; font-size: 13px; margin: 0; letter-spacing: 2px; text-transform: uppercase; }
+    .body { padding: 40px; }
+    .body h2 { color: #1a1a2e; font-size: 20px; margin: 0 0 12px; }
+    .body p { color: #555; font-size: 15px; line-height: 1.7; margin: 0 0 16px; }
+    .check-list { list-style: none; padding: 0; margin: 20px 0; }
+    .check-list li { padding: 8px 0; color: #444; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; }
+    .check-list li::before { content: '✓'; color: #00d4ff; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #00d4ff, #7b2fff); color: #ffffff !important; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 700; margin: 24px 0 8px; }
+    .divider { border: none; border-top: 1px solid #eee; margin: 32px 0; }
+    .contact-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+    .contact-item { flex: 1; min-width: 200px; background: #f8f9fb; border-radius: 8px; padding: 14px 16px; }
+    .contact-item span { display: block; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .contact-item a { color: #1a1a2e; text-decoration: none; font-size: 14px; font-weight: 600; }
+    .footer { background: #f8f9fb; padding: 24px 40px; text-align: center; border-top: 1px solid #eee; }
+    .footer p { color: #999; font-size: 12px; margin: 0 0 8px; }
+    .footer a { color: #7b2fff; text-decoration: none; font-size: 12px; }
+    .social-links { margin: 12px 0 0; }
+    .social-links a { display: inline-block; width: 32px; height: 32px; border-radius: 50%; background: #eee; margin: 0 4px; line-height: 32px; text-align: center; color: #555 !important; font-size: 14px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="logo-hex">
+        <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="12" fill="#060612"/>
+          <polygon points="32,8 48,17 48,35 32,44 16,35 16,17" fill="none" stroke="#00d4ff" stroke-width="2"/>
+          <text x="32" y="35" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="14" fill="#00d4ff">TI</text>
+        </svg>
+      </div>
+      <h1>RM PrimeTI Tecnologia</h1>
+      <p>Soluções Completas em TI</p>
+    </div>
+
+    <!-- BODY -->
+    <div class="body">
+      <h2>Inscrição confirmada! 🎉</h2>
+      <p>Olá! Sua inscrição na newsletter da <strong>RM PrimeTI Tecnologia</strong> foi realizada com sucesso.</p>
+      <p>A partir de agora você vai receber em primeira mão:</p>
+      <ul class="check-list">
+        <li>Dicas práticas de tecnologia para o seu negócio</li>
+        <li>Novidades sobre nossos produtos e serviços</li>
+        <li>Alertas de segurança e manutenção preventiva</li>
+        <li>Ofertas exclusivas para assinantes da newsletter</li>
+      </ul>
+      <p>Precisa de suporte ou quer conversar sobre algum projeto? Fale conosco:</p>
+      <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Sou%20assinante%20da%20newsletter%20da%20PrimeTI!" class="btn">
+        💬 Falar com a equipe
+      </a>
+
+      <hr class="divider">
+
+      <div class="contact-row">
+        <div class="contact-item">
+          <span>WhatsApp</span>
+          <a href="https://wa.me/5531990656645">(31) 99065-6645</a>
+        </div>
+        <div class="contact-item">
+          <span>E-mail</span>
+          <a href="mailto:comercial@primetitec.com.br">comercial@primetitec.com.br</a>
+        </div>
+        <div class="contact-item">
+          <span>Site</span>
+          <a href="https://www.primetitec.com.br">www.primetitec.com.br</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>Você recebeu este e-mail por ter se inscrito em <a href="https://www.primetitec.com.br">www.primetitec.com.br</a></p>
+      <p>
+        <a href="https://www.primetitec.com.br/politica-de-privacidade.html">Política de Privacidade</a>
+        &nbsp;·&nbsp;
+        CNPJ: 62.938.903/0001-75
+      </p>
+      <p style="margin-top:8px;font-size:11px;color:#bbb">
+        Para cancelar sua inscrição, responda este e-mail com o assunto "Descadastrar".
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

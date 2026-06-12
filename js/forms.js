@@ -106,6 +106,16 @@
   function setupNewsletter(form) {
     const status = document.getElementById('newsletterStatus');
 
+    /* inicializa EmailJS se configurado */
+    const ejsReady =
+      typeof emailjs !== 'undefined' &&
+      typeof EMAILJS_PUBLIC_KEY !== 'undefined' &&
+      EMAILJS_PUBLIC_KEY !== 'SUA_PUBLIC_KEY';
+
+    if (ejsReady) {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
@@ -125,19 +135,33 @@
         const { error } = await db.from('newsletter').insert({ email });
 
         if (error?.code === '23505') {
-          /* unique constraint — já cadastrado */
+          /* unique constraint — e-mail já cadastrado */
           if (status) status.textContent = 'E-mail já cadastrado. Obrigado!';
           input.value = '';
           button.textContent = '✓';
+          setTimeout(function () {
+            button.disabled = false;
+            button.textContent = 'Assinar';
+          }, 3000);
           return;
         }
 
         if (error) throw error;
 
+        /* ── inscrição salva com sucesso — envia e-mail de confirmação ── */
         input.value = '';
         button.textContent = '✓ Inscrito!';
         button.style.background = '#27c93f';
-        if (status) status.textContent = 'Obrigado! Você receberá nossas novidades.';
+        if (status) status.textContent = 'Obrigado! Verifique seu e-mail para confirmação.';
+
+        if (ejsReady) {
+          emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            to_email:   email,
+            reply_to:   'comercial@primetitec.com.br',
+          }).catch(function (err) {
+            console.warn('[PrimeTI] EmailJS: falha ao enviar confirmação', err);
+          });
+        }
 
       } catch (err) {
         console.error('[PrimeTI] Erro newsletter:', err);
@@ -149,7 +173,8 @@
         button.disabled = false;
         button.textContent = 'Assinar';
         button.style.background = '';
-      }, 4000);
+        if (status) status.textContent = '';
+      }, 6000);
     });
   }
 
