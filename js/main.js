@@ -109,61 +109,6 @@ function loadAnalytics() {
 })();
 
 /* ============================================================
-   TESTIMONIALS CAROUSEL
-   ============================================================ */
-(function initTestimonials() {
-  const track  = document.getElementById('testimonialsTrack');
-  const dots   = document.getElementById('testDots');
-  const prev   = document.getElementById('prevTest');
-  const next   = document.getElementById('nextTest');
-  if (!track) return;
-
-  const cards  = track.querySelectorAll('.testimonial-card');
-  let cur      = 0;
-  let timer;
-
-  // wrap track so overflow hidden works
-  const outer = track.parentElement;
-  outer.style.overflow = 'hidden';
-  outer.style.borderRadius = '16px';
-
-  // build dots
-  cards.forEach((_, i) => {
-    const d = document.createElement('button');
-    d.className = 'test-dot' + (i === 0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Depoimento ' + (i + 1));
-    d.addEventListener('click', () => { stop(); goTo(i); start(); });
-    dots.appendChild(d);
-  });
-
-  function goTo(idx) {
-    cur = (idx + cards.length) % cards.length;
-    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
-    dots.querySelectorAll('.test-dot').forEach((d, i) =>
-      d.classList.toggle('active', i === cur)
-    );
-  }
-  function start() { timer = setInterval(() => goTo(cur + 1), 4800); }
-  function stop()  { clearInterval(timer); }
-
-  prev?.addEventListener('click', () => { stop(); goTo(cur - 1); start(); });
-  next?.addEventListener('click', () => { stop(); goTo(cur + 1); start(); });
-  track.addEventListener('mouseenter', stop);
-  track.addEventListener('mouseleave', start);
-
-  // touch/swipe support
-  let touchX = 0;
-  track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; stop(); }, { passive: true });
-  track.addEventListener('touchend',   e => {
-    const diff = touchX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) goTo(diff > 0 ? cur + 1 : cur - 1);
-    start();
-  }, { passive: true });
-
-  start();
-})();
-
-/* ============================================================
    QUICK QUOTE FORM
    ============================================================ */
 (function initQuickQuote() {
@@ -336,37 +281,19 @@ function loadAnalytics() {
 })();
 
 /* ============================================================
-   COUNTER ANIMATION
-   ============================================================ */
-function animateCounter(el) {
-  const target   = +el.dataset.target;
-  const duration = 1800;
-  const start    = performance.now();
-  function step(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const ease     = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(ease * target);
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-/* ============================================================
-   SCROLL REVEAL + COUNTER TRIGGER
+   SCROLL REVEAL
    ============================================================ */
 (function initReveal() {
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('visible');
-      entry.target.querySelectorAll('.stat-number[data-target]')
-        .forEach(animateCounter);
       io.unobserve(entry.target);
     });
   }, { threshold: .12 });
 
   document.querySelectorAll(
-    '.reveal, .service-card, .product-card, .contact-card, .cta-banner, .hero-stats'
+    '.reveal, .service-card, .product-card, .contact-card, .cta-banner, .hero-badges'
   ).forEach(el => {
     el.classList.add('reveal');
     io.observe(el);
