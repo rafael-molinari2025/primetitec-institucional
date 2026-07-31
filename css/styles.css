@@ -32,6 +32,7 @@
   --r-lg: 22px;
   --ease: cubic-bezier(.4,0,.2,1);
   --t: all .3s var(--ease);
+  --section-py: 110px;
 }
 
 /* ===== RESET ===== */
@@ -639,6 +640,7 @@ section{padding:110px 0}
   .plans-extra{grid-template-columns:1fr;gap:28px}
 }
 @media (max-width:768px){
+  :root{--section-py:80px}
   section{padding:80px 0}
   .nav-menu{
     position:fixed;top:0;right:-100%;width:290px;height:100vh;
