@@ -35,7 +35,7 @@
     .back-link:hover{opacity:.7}
   </style>
 </head>
-<body>
+<body data-page="privacy">
 
   <!-- NAVBAR -->
   <nav id="navbar" class="navbar scrolled" role="navigation" aria-label="Navegação principal">
@@ -50,16 +50,32 @@
           <text x="50" y="43" font-family="Inter, Arial, sans-serif" font-size="8.5" fill="#4a5568" letter-spacing="3">TECNOLOGIA</text>
         </svg>
       </a>
-      <ul class="nav-menu" role="menubar">
-        <li role="none"><a href="/#inicio"    class="nav-link" role="menuitem">Início</a></li>
-        <li role="none"><a href="/#servicos"  class="nav-link" role="menuitem">Serviços</a></li>
-        <li role="none"><a href="/#portfolio" class="nav-link" role="menuitem">Portfólio</a></li>
-        <li role="none"><a href="/#produtos"  class="nav-link" role="menuitem">Produtos</a></li>
-        <li role="none"><a href="/#contato"   class="nav-link nav-cta" role="menuitem">Contato</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <ul class="nav-menu" role="menubar">
+          <li role="none"><a href="/#inicio"    class="nav-link" role="menuitem" data-i18n="nav.home">Início</a></li>
+          <li role="none"><a href="/#servicos"  class="nav-link" role="menuitem" data-i18n="nav.services">Serviços</a></li>
+          <li role="none"><a href="/#portfolio" class="nav-link" role="menuitem" data-i18n="nav.portfolio">Portfólio</a></li>
+          <li role="none"><a href="/#produtos"  class="nav-link" role="menuitem" data-i18n="nav.products">Produtos</a></li>
+          <li role="none"><a href="/#contato"   class="nav-link nav-cta" role="menuitem" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-current" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar idioma" data-i18n-aria-label="lang.selectLabel">
+            <span class="lang-flag" aria-hidden="true">🇧🇷</span>
+            <span class="lang-code">PT-BR</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="menu">
+            <li role="none"><button type="button" role="menuitem" class="lang-option" data-lang="pt-BR"><span class="lang-flag" aria-hidden="true">🇧🇷</span> Português (Brasil)</button></li>
+            <li role="none"><button type="button" role="menuitem" class="lang-option" data-lang="pt-PT"><span class="lang-flag" aria-hidden="true">🇵🇹</span> Português (Portugal)</button></li>
+            <li role="none"><button type="button" role="menuitem" class="lang-option" data-lang="en"><span class="lang-flag" aria-hidden="true">🇬🇧</span> English</button></li>
+          </ul>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" data-i18n-aria-label="nav.openMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -69,139 +85,139 @@
 
       <a href="/" class="back-link">
         <i class="fas fa-arrow-left" aria-hidden="true"></i>
-        Voltar ao site
+        <span data-i18n="pp.backLink">Voltar ao site</span>
       </a>
 
       <header class="pp-header">
-        <h1>Política de Privacidade</h1>
-        <span class="updated">Última atualização: 11 de junho de 2026</span>
+        <h1 data-i18n="pp.h1">Política de Privacidade</h1>
+        <span class="updated" data-i18n="pp.updated">Última atualização: 11 de junho de 2026</span>
       </header>
 
       <div class="pp-body">
 
         <div class="pp-card highlight">
-          <p><strong>Resumo:</strong> Coletamos apenas os dados necessários para atender você (nome, e-mail, telefone). Não vendemos seus dados a terceiros. Você pode solicitar a exclusão a qualquer momento pelo e-mail <a href="mailto:privacidade@primetitec.com.br">privacidade@primetitec.com.br</a>. Esta política está em conformidade com a <strong>Lei nº 13.709/2018 (LGPD)</strong>.</p>
+          <p data-i18n="pp.summary"><strong>Resumo:</strong> Coletamos apenas os dados necessários para atender você (nome, e-mail, telefone). Não vendemos seus dados a terceiros. Você pode solicitar a exclusão a qualquer momento pelo e-mail <a href="mailto:privacidade@primetitec.com.br">privacidade@primetitec.com.br</a>. Esta política está em conformidade com a <strong>Lei nº 13.709/2018 (LGPD)</strong>.</p>
         </div>
 
-        <h2>1. Quem somos — Controlador dos Dados</h2>
-        <p><strong>RM PrimeTI Tecnologia</strong>, pessoa jurídica de direito privado, inscrita no CNPJ sob o nº 62.938.903/0001-75, com sede em Minas Gerais, Brasil, é a <strong>controladora</strong> dos dados pessoais coletados através do site <a href="https://www.primetitec.com.br">www.primetitec.com.br</a>.</p>
-        <p>Contato para questões de privacidade: <a href="mailto:privacidade@primetitec.com.br">privacidade@primetitec.com.br</a></p>
+        <h2 data-i18n="pp.s1.title">1. Quem somos — Controlador dos Dados</h2>
+        <p data-i18n="pp.s1.p1"><strong>RM PrimeTI Tecnologia</strong>, pessoa jurídica de direito privado, inscrita no CNPJ sob o nº 62.938.903/0001-75, com sede em Minas Gerais, Brasil, é a <strong>controladora</strong> dos dados pessoais coletados através do site <a href="https://www.primetitec.com.br">www.primetitec.com.br</a>.</p>
+        <p data-i18n="pp.s1.p2">Contato para questões de privacidade: <a href="mailto:privacidade@primetitec.com.br">privacidade@primetitec.com.br</a></p>
 
-        <h2>2. Quais dados coletamos e por quê</h2>
+        <h2 data-i18n="pp.s2.title">2. Quais dados coletamos e por quê</h2>
 
-        <h3>2.1 Formulários de contato e orçamento</h3>
-        <p>Quando você preenche nossos formulários, coletamos:</p>
+        <h3 data-i18n="pp.s2_1.title">2.1 Formulários de contato e orçamento</h3>
+        <p data-i18n="pp.s2_1.intro">Quando você preenche nossos formulários, coletamos:</p>
         <ul>
-          <li><strong>Nome completo</strong> — para identificação e personalização do atendimento</li>
-          <li><strong>E-mail</strong> — para envio de respostas e propostas</li>
-          <li><strong>Telefone / WhatsApp</strong> (opcional) — para contato ágil quando necessário</li>
-          <li><strong>Serviço de interesse e mensagem</strong> — para entender sua necessidade e oferecer solução adequada</li>
+          <li data-i18n="pp.s2_1.li1"><strong>Nome completo</strong> — para identificação e personalização do atendimento</li>
+          <li data-i18n="pp.s2_1.li2"><strong>E-mail</strong> — para envio de respostas e propostas</li>
+          <li data-i18n="pp.s2_1.li3"><strong>Telefone / WhatsApp</strong> (opcional) — para contato ágil quando necessário</li>
+          <li data-i18n="pp.s2_1.li4"><strong>Serviço de interesse e mensagem</strong> — para entender sua necessidade e oferecer solução adequada</li>
         </ul>
-        <p><strong>Base legal:</strong> Execução de contrato ou diligências pré-contratuais (Art. 7º, V, LGPD); legítimo interesse (Art. 7º, IX, LGPD).</p>
+        <p data-i18n="pp.s2_1.legal"><strong>Base legal:</strong> Execução de contrato ou diligências pré-contratuais (Art. 7º, V, LGPD); legítimo interesse (Art. 7º, IX, LGPD).</p>
 
-        <h3>2.2 Newsletter</h3>
-        <p>Ao assinar nossa newsletter, coletamos apenas seu <strong>e-mail</strong> para envio de conteúdos sobre tecnologia e novidades da empresa. Você pode cancelar a qualquer momento clicando em "descadastrar" em qualquer e-mail recebido.</p>
-        <p><strong>Base legal:</strong> Consentimento (Art. 7º, I, LGPD).</p>
+        <h3 data-i18n="pp.s2_2.title">2.2 Newsletter</h3>
+        <p data-i18n="pp.s2_2.p1">Ao assinar nossa newsletter, coletamos apenas seu <strong>e-mail</strong> para envio de conteúdos sobre tecnologia e novidades da empresa. Você pode cancelar a qualquer momento clicando em "descadastrar" em qualquer e-mail recebido.</p>
+        <p data-i18n="pp.s2_2.legal"><strong>Base legal:</strong> Consentimento (Art. 7º, I, LGPD).</p>
 
-        <h3>2.3 Dados de navegação (cookies e analytics)</h3>
-        <p>Com seu consentimento, coletamos dados de navegação de forma anonimizada:</p>
+        <h3 data-i18n="pp.s2_3.title">2.3 Dados de navegação (cookies e analytics)</h3>
+        <p data-i18n="pp.s2_3.intro">Com seu consentimento, coletamos dados de navegação de forma anonimizada:</p>
         <ul>
-          <li><strong>Páginas visitadas e referência de origem</strong> — via banco de dados interno (Supabase)</li>
-          <li><strong>Métricas de uso</strong> — via Google Analytics 4 e Microsoft Clarity (mapas de calor)</li>
+          <li data-i18n="pp.s2_3.li1"><strong>Páginas visitadas e referência de origem</strong> — via banco de dados interno (Supabase)</li>
+          <li data-i18n="pp.s2_3.li2"><strong>Métricas de uso</strong> — via Google Analytics 4 e Microsoft Clarity (mapas de calor)</li>
         </ul>
-        <p><strong>Base legal:</strong> Consentimento (Art. 7º, I, LGPD), obtido através do banner de cookies.</p>
+        <p data-i18n="pp.s2_3.legal"><strong>Base legal:</strong> Consentimento (Art. 7º, I, LGPD), obtido através do banner de cookies.</p>
 
-        <h2>3. Cookies</h2>
+        <h2 data-i18n="pp.s3.title">3. Cookies</h2>
         <div class="pp-card">
           <table style="width:100%;border-collapse:collapse;font-size:.82rem">
             <thead>
               <tr style="border-bottom:1px solid rgba(255,255,255,.1)">
-                <th style="text-align:left;padding:8px;color:#fff">Cookie</th>
-                <th style="text-align:left;padding:8px;color:#fff">Finalidade</th>
-                <th style="text-align:left;padding:8px;color:#fff">Validade</th>
+                <th style="text-align:left;padding:8px;color:#fff" data-i18n="pp.s3.thCookie">Cookie</th>
+                <th style="text-align:left;padding:8px;color:#fff" data-i18n="pp.s3.thPurpose">Finalidade</th>
+                <th style="text-align:left;padding:8px;color:#fff" data-i18n="pp.s3.thValidity">Validade</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td style="padding:8px;color:var(--gray-1)"><code>primetiti_cookies</code></td>
-                <td style="padding:8px;color:var(--gray-1)">Guarda preferência de consentimento de cookies</td>
-                <td style="padding:8px;color:var(--gray-1)">Sessão / localStorage</td>
+                <td style="padding:8px;color:var(--gray-1)" data-i18n="pp.s3.row1purpose">Guarda preferência de consentimento de cookies</td>
+                <td style="padding:8px;color:var(--gray-1)" data-i18n="pp.s3.row1validity">Sessão / localStorage</td>
               </tr>
               <tr style="border-top:1px solid rgba(255,255,255,.06)">
                 <td style="padding:8px;color:var(--gray-1)">_ga, _ga_*</td>
-                <td style="padding:8px;color:var(--gray-1)">Google Analytics — análise de tráfego anonimizado</td>
-                <td style="padding:8px;color:var(--gray-1)">Até 2 anos</td>
+                <td style="padding:8px;color:var(--gray-1)" data-i18n="pp.s3.row2purpose">Google Analytics — análise de tráfego anonimizado</td>
+                <td style="padding:8px;color:var(--gray-1)" data-i18n="pp.s3.row2validity">Até 2 anos</td>
               </tr>
               <tr style="border-top:1px solid rgba(255,255,255,.06)">
                 <td style="padding:8px;color:var(--gray-1)">_clck, _clsk</td>
-                <td style="padding:8px;color:var(--gray-1)">Microsoft Clarity — mapa de calor e gravação de sessão</td>
-                <td style="padding:8px;color:var(--gray-1)">Até 1 ano</td>
+                <td style="padding:8px;color:var(--gray-1)" data-i18n="pp.s3.row3purpose">Microsoft Clarity — mapa de calor e gravação de sessão</td>
+                <td style="padding:8px;color:var(--gray-1)" data-i18n="pp.s3.row3validity">Até 1 ano</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p>Você pode recusar cookies a qualquer momento — seu consentimento pode ser revertido limpando os dados do site no seu navegador.</p>
+        <p data-i18n="pp.s3.after">Você pode recusar cookies a qualquer momento — seu consentimento pode ser revertido limpando os dados do site no seu navegador.</p>
 
-        <h2>4. Com quem compartilhamos seus dados</h2>
-        <p>Seus dados são compartilhados apenas com <strong>operadores técnicos</strong> para a finalidade de prestação do serviço:</p>
+        <h2 data-i18n="pp.s4.title">4. Com quem compartilhamos seus dados</h2>
+        <p data-i18n="pp.s4.intro">Seus dados são compartilhados apenas com <strong>operadores técnicos</strong> para a finalidade de prestação do serviço:</p>
         <ul>
-          <li><strong>Supabase Inc.</strong> (EUA) — armazenamento seguro de leads e newsletter em banco de dados criptografado. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Política de privacidade do Supabase</a></li>
-          <li><strong>Google LLC</strong> (EUA) — Analytics, apenas se você consentir. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política do Google</a></li>
-          <li><strong>Microsoft Corporation</strong> (EUA) — Clarity, apenas se você consentir. <a href="https://privacy.microsoft.com/pt-br/privacystatement" target="_blank" rel="noopener">Política da Microsoft</a></li>
+          <li data-i18n="pp.s4.li1"><strong>Supabase Inc.</strong> (EUA) — armazenamento seguro de leads e newsletter em banco de dados criptografado. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Política de privacidade do Supabase</a></li>
+          <li data-i18n="pp.s4.li2"><strong>Google LLC</strong> (EUA) — Analytics, apenas se você consentir. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política do Google</a></li>
+          <li data-i18n="pp.s4.li3"><strong>Microsoft Corporation</strong> (EUA) — Clarity, apenas se você consentir. <a href="https://privacy.microsoft.com/pt-br/privacystatement" target="_blank" rel="noopener">Política da Microsoft</a></li>
         </ul>
-        <p><strong>Não vendemos, alugamos nem cedemos seus dados pessoais a terceiros</strong> para fins comerciais.</p>
+        <p data-i18n="pp.s4.outro"><strong>Não vendemos, alugamos nem cedemos seus dados pessoais a terceiros</strong> para fins comerciais.</p>
 
-        <h2>5. Transferência internacional de dados</h2>
-        <p>Ao utilizar nossos serviços, seus dados podem ser processados nos Estados Unidos, onde nossos operadores (Supabase, Google, Microsoft) mantêm infraestrutura. Essas transferências são realizadas com salvaguardas adequadas (cláusulas contratuais padrão e certificações de segurança).</p>
+        <h2 data-i18n="pp.s5.title">5. Transferência internacional de dados</h2>
+        <p data-i18n="pp.s5.p">Ao utilizar nossos serviços, seus dados podem ser processados nos Estados Unidos, onde nossos operadores (Supabase, Google, Microsoft) mantêm infraestrutura. Essas transferências são realizadas com salvaguardas adequadas (cláusulas contratuais padrão e certificações de segurança).</p>
 
-        <h2>6. Segurança dos dados</h2>
-        <p>Adotamos medidas técnicas e organizacionais para proteger seus dados:</p>
+        <h2 data-i18n="pp.s6.title">6. Segurança dos dados</h2>
+        <p data-i18n="pp.s6.intro">Adotamos medidas técnicas e organizacionais para proteger seus dados:</p>
         <ul>
-          <li>Conexões criptografadas via <strong>HTTPS/TLS</strong></li>
-          <li>Banco de dados com <strong>Row Level Security (RLS)</strong> — visitantes do site só podem inserir dados, nunca ler ou editar</li>
-          <li>Acesso ao painel administrativo restrito a usuários autenticados</li>
-          <li>Chaves de API anônimas sem privilégios administrativos no front-end</li>
+          <li data-i18n="pp.s6.li1">Conexões criptografadas via <strong>HTTPS/TLS</strong></li>
+          <li data-i18n="pp.s6.li2">Banco de dados com <strong>Row Level Security (RLS)</strong> — visitantes do site só podem inserir dados, nunca ler ou editar</li>
+          <li data-i18n="pp.s6.li3">Acesso ao painel administrativo restrito a usuários autenticados</li>
+          <li data-i18n="pp.s6.li4">Chaves de API anônimas sem privilégios administrativos no front-end</li>
         </ul>
-        <p>Em caso de incidente de segurança que possa afetar seus dados, notificaremos a ANPD e os titulares afetados dentro do prazo estabelecido pela LGPD.</p>
+        <p data-i18n="pp.s6.after">Em caso de incidente de segurança que possa afetar seus dados, notificaremos a ANPD e os titulares afetados dentro do prazo estabelecido pela LGPD.</p>
 
-        <h2>7. Seus direitos como titular dos dados (LGPD, Art. 18)</h2>
+        <h2 data-i18n="pp.s7.title">7. Seus direitos como titular dos dados (LGPD, Art. 18)</h2>
         <div class="pp-card">
           <ul style="margin:0;padding-left:16px">
-            <li><strong>Confirmação e acesso</strong> — saber se processamos seus dados e ter acesso a eles</li>
-            <li><strong>Correção</strong> — solicitar a correção de dados incompletos, inexatos ou desatualizados</li>
-            <li><strong>Anonimização, bloqueio ou eliminação</strong> — de dados desnecessários ou excessivos</li>
-            <li><strong>Portabilidade</strong> — receber seus dados em formato estruturado</li>
-            <li><strong>Eliminação</strong> — solicitar a exclusão dos dados tratados com base em consentimento</li>
-            <li><strong>Informação</strong> — ser informado sobre com quem seus dados são compartilhados</li>
-            <li><strong>Revogação do consentimento</strong> — retirar consentimento a qualquer momento</li>
-            <li><strong>Oposição</strong> — contestar o tratamento realizado em desacordo com a lei</li>
+            <li data-i18n="pp.s7.li1"><strong>Confirmação e acesso</strong> — saber se processamos seus dados e ter acesso a eles</li>
+            <li data-i18n="pp.s7.li2"><strong>Correção</strong> — solicitar a correção de dados incompletos, inexatos ou desatualizados</li>
+            <li data-i18n="pp.s7.li3"><strong>Anonimização, bloqueio ou eliminação</strong> — de dados desnecessários ou excessivos</li>
+            <li data-i18n="pp.s7.li4"><strong>Portabilidade</strong> — receber seus dados em formato estruturado</li>
+            <li data-i18n="pp.s7.li5"><strong>Eliminação</strong> — solicitar a exclusão dos dados tratados com base em consentimento</li>
+            <li data-i18n="pp.s7.li6"><strong>Informação</strong> — ser informado sobre com quem seus dados são compartilhados</li>
+            <li data-i18n="pp.s7.li7"><strong>Revogação do consentimento</strong> — retirar consentimento a qualquer momento</li>
+            <li data-i18n="pp.s7.li8"><strong>Oposição</strong> — contestar o tratamento realizado em desacordo com a lei</li>
           </ul>
         </div>
-        <p>Para exercer qualquer direito, envie um e-mail para <a href="mailto:privacidade@primetitec.com.br">privacidade@primetitec.com.br</a> com o assunto "Solicitação LGPD". Responderemos em até <strong>15 dias úteis</strong>.</p>
+        <p data-i18n="pp.s7.after">Para exercer qualquer direito, envie um e-mail para <a href="mailto:privacidade@primetitec.com.br">privacidade@primetitec.com.br</a> com o assunto "Solicitação LGPD". Responderemos em até <strong>15 dias úteis</strong>.</p>
 
-        <h2>8. Retenção dos dados</h2>
+        <h2 data-i18n="pp.s8.title">8. Retenção dos dados</h2>
         <ul>
-          <li><strong>Leads / formulários de contato:</strong> mantidos por até 2 anos após o último contato, ou enquanto houver relacionamento comercial</li>
-          <li><strong>Newsletter:</strong> mantidos enquanto você não solicitar o descadastramento</li>
-          <li><strong>Dados de navegação (analytics):</strong> anonimizados após 14 meses pela configuração padrão do Google Analytics</li>
+          <li data-i18n="pp.s8.li1"><strong>Leads / formulários de contato:</strong> mantidos por até 2 anos após o último contato, ou enquanto houver relacionamento comercial</li>
+          <li data-i18n="pp.s8.li2"><strong>Newsletter:</strong> mantidos enquanto você não solicitar o descadastramento</li>
+          <li data-i18n="pp.s8.li3"><strong>Dados de navegação (analytics):</strong> anonimizados após 14 meses pela configuração padrão do Google Analytics</li>
         </ul>
 
-        <h2>9. Links para sites externos</h2>
-        <p>Nosso site contém links para sites de terceiros (Google, GitHub, parceiros). Esta Política de Privacidade se aplica exclusivamente ao <strong>www.primetitec.com.br</strong> e aos subdomínios de nossos produtos. Recomendamos a leitura das políticas dos sites externos antes de compartilhar seus dados com eles.</p>
+        <h2 data-i18n="pp.s9.title">9. Links para sites externos</h2>
+        <p data-i18n="pp.s9.p">Nosso site contém links para sites de terceiros (Google, GitHub, parceiros). Esta Política de Privacidade se aplica exclusivamente ao <strong>www.primetitec.com.br</strong> e aos subdomínios de nossos produtos. Recomendamos a leitura das políticas dos sites externos antes de compartilhar seus dados com eles.</p>
 
-        <h2>10. Alterações nesta política</h2>
-        <p>Podemos atualizar esta Política periodicamente. A data da última atualização é indicada no topo desta página. Alterações significativas serão comunicadas por e-mail para os inscritos em nossa newsletter.</p>
+        <h2 data-i18n="pp.s10.title">10. Alterações nesta política</h2>
+        <p data-i18n="pp.s10.p">Podemos atualizar esta Política periodicamente. A data da última atualização é indicada no topo desta página. Alterações significativas serão comunicadas por e-mail para os inscritos em nossa newsletter.</p>
 
-        <h2>11. Contato e DPO</h2>
+        <h2 data-i18n="pp.s11.title">11. Contato e DPO</h2>
         <div class="pp-card highlight">
-          <p style="margin:0">
+          <p style="margin:0" data-i18n="pp.s11.card">
             <strong>RM PrimeTI Tecnologia</strong><br>
             CNPJ: 62.938.903/0001-75 — Minas Gerais, Brasil<br>
             E-mail de privacidade: <a href="mailto:privacidade@primetitec.com.br">privacidade@primetitec.com.br</a><br>
             Contato comercial: <a href="mailto:comercial@primetitec.com.br">comercial@primetitec.com.br</a> | (31) 99065-6645
           </p>
         </div>
-        <p style="margin-top:16px;font-size:.8rem">Você também pode registrar reclamações junto à <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>: <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">www.gov.br/anpd</a></p>
+        <p style="margin-top:16px;font-size:.8rem" data-i18n="pp.s11.after">Você também pode registrar reclamações junto à <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>: <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">www.gov.br/anpd</a></p>
 
       </div>
     </div>
@@ -211,12 +227,13 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,.07);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-        <p style="margin:0;font-size:.8rem;color:var(--gray-2)">&copy; <span id="year"></span> RM PrimeTI Tecnologia. Todos os direitos reservados.</p>
-        <a href="/" style="color:var(--cyan);font-size:.82rem;text-decoration:none">← Voltar ao site principal</a>
+        <p style="margin:0;font-size:.8rem;color:var(--gray-2)">&copy; <span id="year"></span> <span data-i18n="footer.rights">RM PrimeTI Tecnologia. Todos os direitos reservados.</span></p>
+        <a href="/" style="color:var(--cyan);font-size:.82rem;text-decoration:none" data-i18n="pp.backToSite">← Voltar ao site principal</a>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script>
     const nb = document.getElementById('navbar');

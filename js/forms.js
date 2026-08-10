@@ -57,12 +57,12 @@
       const data = Object.fromEntries(new FormData(form));
 
       if (!data.nome?.trim() || !data.email?.trim()) {
-        showStatus(status, 'error', 'Por favor, preencha Nome e E-mail.');
+        showStatus(status, 'error', t('js.leadRequired', 'Por favor, preencha Nome e E-mail.'));
         return;
       }
 
       if (!isValidEmail(data.email)) {
-        showStatus(status, 'error', 'Informe um e-mail válido.');
+        showStatus(status, 'error', t('js.invalidEmail', 'Informe um e-mail válido.'));
         return;
       }
 
@@ -83,7 +83,7 @@
         showStatus(
           status,
           'success',
-          '✓ Mensagem enviada com sucesso! Retornaremos em breve.'
+          t('js.leadSuccess', '✓ Mensagem enviada com sucesso! Retornaremos em breve.')
         );
         form.reset();
 
@@ -92,7 +92,7 @@
         showStatus(
           status,
           'error',
-          'Erro ao enviar. Tente pelo WhatsApp: (31) 99065-6645'
+          t('js.leadError', 'Erro ao enviar. Tente pelo WhatsApp: (31) 99065-6645')
         );
       }
 
@@ -124,7 +124,7 @@
       const email  = input?.value?.trim().toLowerCase();
 
       if (!email || !isValidEmail(email)) {
-        if (status) status.textContent = 'Informe um e-mail válido.';
+        if (status) status.textContent = t('js.invalidEmail', 'Informe um e-mail válido.');
         return;
       }
 
@@ -136,12 +136,12 @@
 
         if (error?.code === '23505') {
           /* unique constraint — e-mail já cadastrado */
-          if (status) status.textContent = 'E-mail já cadastrado. Obrigado!';
+          if (status) status.textContent = t('js.emailAlreadyRegistered', 'E-mail já cadastrado. Obrigado!');
           input.value = '';
           button.textContent = '✓';
           setTimeout(function () {
             button.disabled = false;
-            button.textContent = 'Assinar';
+            button.textContent = t('footer.subscribe', 'Assinar');
           }, 3000);
           return;
         }
@@ -150,9 +150,9 @@
 
         /* ── inscrição salva com sucesso — envia e-mail de confirmação ── */
         input.value = '';
-        button.textContent = '✓ Inscrito!';
+        button.textContent = t('js.subscribed', '✓ Inscrito!');
         button.style.background = '#27c93f';
-        if (status) status.textContent = 'Obrigado! Verifique seu e-mail para confirmação.';
+        if (status) status.textContent = t('js.checkEmailConfirmation', 'Obrigado! Verifique seu e-mail para confirmação.');
 
         if (ejsReady) {
           emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
@@ -165,13 +165,13 @@
 
       } catch (err) {
         console.error('[PrimeTI] Erro newsletter:', err);
-        button.textContent = 'Erro';
-        if (status) status.textContent = 'Erro ao cadastrar. Tente novamente.';
+        button.textContent = t('js.error', 'Erro');
+        if (status) status.textContent = t('js.subscribeError', 'Erro ao cadastrar. Tente novamente.');
       }
 
       setTimeout(function () {
         button.disabled = false;
-        button.textContent = 'Assinar';
+        button.textContent = t('footer.subscribe', 'Assinar');
         button.style.background = '';
         if (status) status.textContent = '';
       }, 6000);
@@ -209,12 +209,16 @@
     const span = btn.querySelector('span');
     const icon = btn.querySelector('i');
     if (loading) {
-      if (span) span.textContent = 'Enviando...';
+      if (span) span.textContent = t('js.sending', 'Enviando...');
       if (icon) icon.className = 'fas fa-circle-notch fa-spin';
     } else {
-      if (span) span.textContent = 'Enviar mensagem';
+      if (span) span.textContent = t('form.send', 'Enviar mensagem');
       if (icon) icon.className = 'fas fa-paper-plane';
     }
+  }
+
+  function t(key, fallback) {
+    return window.i18n ? window.i18n.t(key, fallback) : fallback;
   }
 
   function showStatus(el, type, msg) {

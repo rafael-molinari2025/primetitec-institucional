@@ -97,7 +97,7 @@
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="index">
 
   <!-- Preloader -->
   <div id="preloader" class="preloader" aria-hidden="true">
@@ -113,16 +113,16 @@
   </div>
 
   <!-- Cookie Banner (LGPD) -->
-  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Aviso de privacidade">
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Aviso de privacidade" data-i18n-aria-label="cookie.ariaLabel">
     <div class="cookie-inner">
       <i class="fas fa-cookie-bite cookie-icon" aria-hidden="true"></i>
       <div class="cookie-text">
-        <strong>Sua privacidade importa</strong>
-        <p>Usamos cookies para melhorar sua experiência e analisar o tráfego, em conformidade com a <a href="/politica-de-privacidade.html">LGPD</a>.</p>
+        <strong data-i18n="cookie.title">Sua privacidade importa</strong>
+        <p data-i18n="cookie.text">Usamos cookies para melhorar sua experiência e analisar o tráfego, em conformidade com a <a href="/politica-de-privacidade.html">LGPD</a>.</p>
       </div>
       <div class="cookie-btns">
-        <button id="cookieDecline" class="cookie-btn cookie-decline">Recusar</button>
-        <button id="cookieAccept"  class="cookie-btn cookie-accept">Aceitar todos</button>
+        <button id="cookieDecline" class="cookie-btn cookie-decline" data-i18n="cookie.decline">Recusar</button>
+        <button id="cookieAccept"  class="cookie-btn cookie-accept" data-i18n="cookie.accept">Aceitar todos</button>
       </div>
     </div>
   </div>
@@ -151,27 +151,42 @@
         </svg>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-right">
+        <ul class="nav-menu" id="navMenu" role="menubar">
+          <li role="none"><a href="#inicio"     class="nav-link" role="menuitem" data-i18n="nav.home">Início</a></li>
+          <li role="none"><a href="#servicos"  class="nav-link" role="menuitem" data-i18n="nav.services">Serviços</a></li>
+          <li role="none"><a href="#planos-empresas" class="nav-link" role="menuitem" data-i18n="nav.plans">Planos</a></li>
+          <li role="none"><a href="#sistemas-empresas" class="nav-link" role="menuitem" data-i18n="nav.systems">Sistemas</a></li>
+          <li role="none"><a href="#portfolio" class="nav-link" role="menuitem" data-i18n="nav.portfolio">Portfólio</a></li>
+          <li role="none"><a href="#produtos"  class="nav-link" role="menuitem" data-i18n="nav.products">Produtos</a></li>
+          <li role="none"><a href="#faq"       class="nav-link" role="menuitem" data-i18n="nav.faq">FAQ</a></li>
+          <li role="none"><a href="#contato"   class="nav-link nav-cta" role="menuitem" data-i18n="nav.contact">Contato</a></li>
+        </ul>
 
-      <ul class="nav-menu" id="navMenu" role="menubar">
-        <li role="none"><a href="#inicio"     class="nav-link" role="menuitem">Início</a></li>
-        <li role="none"><a href="#servicos"  class="nav-link" role="menuitem">Serviços</a></li>
-        <li role="none"><a href="#planos-empresas" class="nav-link" role="menuitem">Planos</a></li>
-        <li role="none"><a href="#sistemas-empresas" class="nav-link" role="menuitem">Sistemas</a></li>
-        <li role="none"><a href="#portfolio" class="nav-link" role="menuitem">Portfólio</a></li>
-        <li role="none"><a href="#produtos"  class="nav-link" role="menuitem">Produtos</a></li>
-        <li role="none"><a href="#faq"       class="nav-link" role="menuitem">FAQ</a></li>
-        <li role="none"><a href="#contato"   class="nav-link nav-cta" role="menuitem">Contato</a></li>
-      </ul>
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-current" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar idioma" data-i18n-aria-label="lang.selectLabel">
+            <span class="lang-flag" aria-hidden="true">🇧🇷</span>
+            <span class="lang-code">PT-BR</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="menu">
+            <li role="none"><button type="button" role="menuitem" class="lang-option" data-lang="pt-BR"><span class="lang-flag" aria-hidden="true">🇧🇷</span> Português (Brasil)</button></li>
+            <li role="none"><button type="button" role="menuitem" class="lang-option" data-lang="pt-PT"><span class="lang-flag" aria-hidden="true">🇵🇹</span> Português (Portugal)</button></li>
+            <li role="none"><button type="button" role="menuitem" class="lang-option" data-lang="en"><span class="lang-flag" aria-hidden="true">🇬🇧</span> English</button></li>
+          </ul>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" data-i18n-aria-label="nav.openMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- ======= HERO ======= -->
-  <section id="inicio" class="hero" aria-label="Seção inicial">
+  <section id="inicio" class="hero" aria-label="Seção inicial" data-i18n-aria-label="hero.ariaLabel">
     <canvas id="particleCanvas" aria-hidden="true"></canvas>
     <div class="hero-orbs" aria-hidden="true">
       <div class="orb orb-1"></div>
@@ -183,16 +198,16 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot" aria-hidden="true"></span>
-        Manutenção de Computadores e Notebooks em BH e Região
+        <span data-i18n="hero.badge">Manutenção de Computadores e Notebooks em BH e Região</span>
       </div>
 
       <h1 class="hero-title">
-        <span class="hero-line" style="--delay:0.2s">Seu computador</span>
-        <span class="hero-line" style="--delay:0.4s">ou notebook com</span>
-        <span class="hero-line gradient-text" style="--delay:0.6s">problema?</span>
+        <span class="hero-line" style="--delay:0.2s" data-i18n="hero.title1">Seu computador</span>
+        <span class="hero-line" style="--delay:0.4s" data-i18n="hero.title2">ou notebook com</span>
+        <span class="hero-line gradient-text" style="--delay:0.6s" data-i18n="hero.title3">problema?</span>
       </h1>
 
-      <p class="hero-subtitle" style="--delay:0.8s">
+      <p class="hero-subtitle" style="--delay:0.8s" data-i18n="hero.subtitle">
         Manutenção rápida e com garantia, diagnóstico ágil e atendimento sem enrolação. Também atuamos em consultoria de TI e desenvolvimento de sites e sistemas.
       </p>
 
@@ -200,26 +215,26 @@
         <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Preciso%20de%20manuten%C3%A7%C3%A3o%20no%20meu%20computador%2Fnotebook%20com%20urg%C3%AAncia."
            class="btn btn-primary" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          Preciso de Manutenção Agora
+          <span data-i18n="hero.btn1">Preciso de Manutenção Agora</span>
         </a>
         <a href="#servicos" class="btn btn-secondary">
           <i class="fas fa-rocket" aria-hidden="true"></i>
-          Ver Todos os Serviços
+          <span data-i18n="hero.btn2">Ver Todos os Serviços</span>
         </a>
       </div>
 
       <div class="hero-badges" style="--delay:1.2s">
         <div class="hero-badge-pill">
           <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-          <span>Atendimento em BH e região</span>
+          <span data-i18n="hero.pill1">Atendimento em BH e região</span>
         </div>
         <div class="hero-badge-pill">
           <i class="fas fa-file-signature" aria-hidden="true"></i>
-          <span>Garantia em contrato</span>
+          <span data-i18n="hero.pill2">Garantia em contrato</span>
         </div>
         <div class="hero-badge-pill">
           <i class="fas fa-bolt" aria-hidden="true"></i>
-          <span>Resposta em até 2h</span>
+          <span data-i18n="hero.pill3">Resposta em até 2h</span>
         </div>
       </div>
     </div>
@@ -228,32 +243,32 @@
       <div class="scroll-mouse">
         <div class="scroll-dot"></div>
       </div>
-      <span>Role para explorar</span>
+      <span data-i18n="hero.scroll">Role para explorar</span>
     </div>
   </section>
 
   <!-- ======= FEATURES BAR ======= -->
-  <div class="features-bar" aria-label="Diferenciais">
+  <div class="features-bar" aria-label="Diferenciais" data-i18n-aria-label="features.ariaLabel">
     <div class="container">
       <div class="features-row">
         <div class="feature-item">
           <i class="fas fa-shield-alt" aria-hidden="true"></i>
-          <span>Atendimento Garantido</span>
+          <span data-i18n="features.f1">Atendimento Garantido</span>
         </div>
         <div class="feature-sep" aria-hidden="true"></div>
         <div class="feature-item">
           <i class="fas fa-bolt" aria-hidden="true"></i>
-          <span>Suporte Rápido</span>
+          <span data-i18n="features.f2">Suporte Rápido</span>
         </div>
         <div class="feature-sep" aria-hidden="true"></div>
         <div class="feature-item">
           <i class="fas fa-headset" aria-hidden="true"></i>
-          <span>Suporte Especializado</span>
+          <span data-i18n="features.f3">Suporte Especializado</span>
         </div>
         <div class="feature-sep" aria-hidden="true"></div>
         <div class="feature-item">
           <i class="fas fa-certificate" aria-hidden="true"></i>
-          <span>Empresa Registrada</span>
+          <span data-i18n="features.f4">Empresa Registrada</span>
         </div>
       </div>
     </div>
@@ -263,16 +278,16 @@
   <section id="servicos" class="services" aria-labelledby="servicos-title">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-tag">O que fazemos</span>
-        <h2 class="section-title" id="servicos-title">Nossos <span class="gradient-text">Serviços</span></h2>
-        <p class="section-subtitle">Soluções completas em tecnologia da informação para impulsionar o crescimento do seu negócio</p>
+        <span class="section-tag" data-i18n="services.tag">O que fazemos</span>
+        <h2 class="section-title" id="servicos-title" data-i18n="services.title">Nossos <span class="gradient-text">Serviços</span></h2>
+        <p class="section-subtitle" data-i18n="services.subtitle">Soluções completas em tecnologia da informação para impulsionar o crescimento do seu negócio</p>
       </header>
 
       <div class="services-grid">
 
         <!-- Service 1 — Maintenance (FEATURED) -->
-        <article class="service-card featured reveal" aria-label="Montagem e Manutenção de Computadores">
-          <div class="service-featured-badge" aria-label="Serviço mais popular">Mais Popular</div>
+        <article class="service-card featured reveal" aria-label="Montagem e Manutenção de Computadores" data-i18n-aria-label="services.svc1.ariaLabel">
+          <div class="service-featured-badge" aria-label="Serviço mais popular" data-i18n="services.mostPopular" data-i18n-aria-label="services.mostPopularAria">Mais Popular</div>
           <div class="service-illustration" aria-hidden="true">
             <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -336,19 +351,19 @@
           <div class="service-icon purple">
             <i class="fas fa-tools" aria-hidden="true"></i>
           </div>
-          <h3 class="service-title">Montagem e Manutenção</h3>
-          <p class="service-description">
+          <h3 class="service-title" data-i18n="services.svc1.title">Montagem e Manutenção</h3>
+          <p class="service-description" data-i18n="services.svc1.desc">
             Serviço completo de montagem, reparo e manutenção preventiva e corretiva de computadores e notebooks de todas as marcas e modelos com diagnóstico preciso.
           </p>
-          <ul class="service-features" aria-label="Recursos incluídos">
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Diagnóstico completo</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Troca de componentes</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Formatação e reinstalação</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Montagem personalizada (PC Gamer)</li>
+          <ul class="service-features" aria-label="Recursos incluídos" data-i18n-aria-label="services.featuresAria">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc1.f1">Diagnóstico completo</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc1.f2">Troca de componentes</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc1.f3">Formatação e reinstalação</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc1.f4">Montagem personalizada (PC Gamer)</span></li>
           </ul>
           <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Preciso%20de%20manuten%C3%A7%C3%A3o%20no%20meu%20computador%2Fnotebook."
              class="service-cta purple" target="_blank" rel="noopener noreferrer">
-            Solicitar Manutenção <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            <span data-i18n="services.svc1.cta">Solicitar Manutenção</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
         </article>
 
@@ -415,19 +430,19 @@
           <div class="service-icon">
             <i class="fas fa-network-wired" aria-hidden="true"></i>
           </div>
-          <h3 class="service-title">Consultoria em TI</h3>
-          <p class="service-description">
+          <h3 class="service-title" data-i18n="services.svc2.title">Consultoria em TI</h3>
+          <p class="service-description" data-i18n="services.svc2.desc">
             Análise, planejamento e implementação de infraestrutura tecnológica. Ajudamos sua empresa a tomar as melhores decisões com eficiência, segurança e visão estratégica.
           </p>
-          <ul class="service-features" aria-label="Recursos incluídos">
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Análise de infraestrutura</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Segurança da informação</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Gestão de redes corporativas</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Suporte técnico especializado</li>
+          <ul class="service-features" aria-label="Recursos incluídos" data-i18n-aria-label="services.featuresAria">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc2.f1">Análise de infraestrutura</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc2.f2">Segurança da informação</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc2.f3">Gestão de redes corporativas</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc2.f4">Suporte técnico especializado</span></li>
           </ul>
           <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Consultoria%20em%20TI%20da%20PrimeTI."
              class="service-cta" target="_blank" rel="noopener noreferrer">
-            Solicitar Consultoria <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            <span data-i18n="services.svc2.cta">Solicitar Consultoria</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
         </article>
 
@@ -488,19 +503,19 @@
           <div class="service-icon">
             <i class="fas fa-code" aria-hidden="true"></i>
           </div>
-          <h3 class="service-title">Desenvolvimento de Sites e Sistemas</h3>
-          <p class="service-description">
+          <h3 class="service-title" data-i18n="services.svc3.title">Desenvolvimento de Sites e Sistemas</h3>
+          <p class="service-description" data-i18n="services.svc3.desc">
             Criamos sites modernos e sistemas web personalizados para o seu negócio. Do design ao deploy, entregamos soluções que convertem e crescem com você.
           </p>
-          <ul class="service-features" aria-label="Recursos incluídos">
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Sites institucionais e landing pages</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Sistemas web personalizados</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> E-commerce completo</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Integrações e APIs</li>
+          <ul class="service-features" aria-label="Recursos incluídos" data-i18n-aria-label="services.featuresAria">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc3.f1">Sites institucionais e landing pages</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc3.f2">Sistemas web personalizados</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc3.f3">E-commerce completo</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="services.svc3.f4">Integrações e APIs</span></li>
           </ul>
           <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Tenho%20interesse%20em%20desenvolvimento%20de%20site%2Fsistema%20pela%20PrimeTI."
              class="service-cta" target="_blank" rel="noopener noreferrer">
-            Solicitar Desenvolvimento <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            <span data-i18n="services.svc3.cta">Solicitar Desenvolvimento</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
         </article>
 
@@ -512,78 +527,78 @@
   <section id="planos-empresas" class="plans-sec" aria-labelledby="plans-title">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-tag">Planos e investimento</span>
-        <h2 class="section-title" id="plans-title">Planos para <span class="gradient-text">Empresas</span></h2>
-        <p class="section-subtitle">Contrato mensal de manutenção — chega de esperar o computador quebrar para chamar o técnico. Escolha o plano ideal para o porte da sua empresa.</p>
+        <span class="section-tag" data-i18n="plans.tag">Planos e investimento</span>
+        <h2 class="section-title" id="plans-title" data-i18n="plans.title">Planos para <span class="gradient-text">Empresas</span></h2>
+        <p class="section-subtitle" data-i18n="plans.subtitle">Contrato mensal de manutenção — chega de esperar o computador quebrar para chamar o técnico. Escolha o plano ideal para o porte da sua empresa.</p>
       </header>
 
       <div class="plans-grid">
 
         <div class="plan-card reveal">
-          <h3 class="plan-name">Essencial</h3>
-          <div class="plan-price"><span class="plan-price-value">R$ 400</span><span class="plan-price-period">/mês</span></div>
+          <h3 class="plan-name" data-i18n="plans.essential.name">Essencial</h3>
+          <div class="plan-price"><span class="plan-price-value">R$ 400</span><span class="plan-price-period" data-i18n="plans.perMonth">/mês</span></div>
           <ul class="plan-features">
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Até 5 computadores</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Suporte remoto + 1 visita técnica/mês</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Manutenção preventiva</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Atualizações e orientação da equipe</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.essential.f1">Até 5 computadores</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.essential.f2">Suporte remoto + 1 visita técnica/mês</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.essential.f3">Manutenção preventiva</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.essential.f4">Atualizações e orientação da equipe</span></li>
           </ul>
           <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Essencial%20(R%24%20400%2Fm%C3%AAs)%20para%20minha%20empresa."
              class="btn btn-secondary plan-btn" target="_blank" rel="noopener noreferrer">
-            Quero esse plano
+            <span data-i18n="plans.cta">Quero esse plano</span>
           </a>
         </div>
 
         <div class="plan-card featured reveal">
-          <span class="plan-badge">Mais Popular</span>
-          <h3 class="plan-name">Profissional</h3>
-          <div class="plan-price"><span class="plan-price-value">R$ 800</span><span class="plan-price-period">/mês</span></div>
+          <span class="plan-badge" data-i18n="services.mostPopular">Mais Popular</span>
+          <h3 class="plan-name" data-i18n="plans.pro.name">Profissional</h3>
+          <div class="plan-price"><span class="plan-price-value">R$ 800</span><span class="plan-price-period" data-i18n="plans.perMonth">/mês</span></div>
           <ul class="plan-features">
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Até 10 computadores</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Suporte remoto ilimitado + 2 visitas/mês</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Manutenção preventiva</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Backup básico</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Prioridade de atendimento</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.pro.f1">Até 10 computadores</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.pro.f2">Suporte remoto ilimitado + 2 visitas/mês</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.pro.f3">Manutenção preventiva</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.pro.f4">Backup básico</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.pro.f5">Prioridade de atendimento</span></li>
           </ul>
           <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Profissional%20(R%24%20800%2Fm%C3%AAs)%20para%20minha%20empresa."
              class="btn btn-primary plan-btn" target="_blank" rel="noopener noreferrer">
-            Quero esse plano
+            <span data-i18n="plans.cta">Quero esse plano</span>
           </a>
         </div>
 
         <div class="plan-card reveal">
-          <h3 class="plan-name">Empresarial</h3>
-          <div class="plan-price"><span class="plan-price-value">R$ 1.500</span><span class="plan-price-period">/mês</span></div>
+          <h3 class="plan-name" data-i18n="plans.biz.name">Empresarial</h3>
+          <div class="plan-price"><span class="plan-price-value">R$ 1.500</span><span class="plan-price-period" data-i18n="plans.perMonth">/mês</span></div>
           <ul class="plan-features">
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Até 20 computadores</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Atendimento prioritário</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Backup, gestão de rede e infraestrutura</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Relatório mensal de saúde dos equipamentos</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.biz.f1">Até 20 computadores</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.biz.f2">Atendimento prioritário</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.biz.f3">Backup, gestão de rede e infraestrutura</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="plans.biz.f4">Relatório mensal de saúde dos equipamentos</span></li>
           </ul>
           <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Empresarial%20(R%24%201.500%2Fm%C3%AAs)%20para%20minha%20empresa."
              class="btn btn-secondary plan-btn" target="_blank" rel="noopener noreferrer">
-            Quero esse plano
+            <span data-i18n="plans.cta">Quero esse plano</span>
           </a>
         </div>
 
       </div>
 
-      <p class="plans-note">Valores acima de 20 computadores ou estruturas com servidores: orçamento personalizado.</p>
+      <p class="plans-note" data-i18n="plans.note">Valores acima de 20 computadores ou estruturas com servidores: orçamento personalizado.</p>
 
       <div class="plans-extra">
         <div class="plans-included">
-          <h4>O que está sempre incluso</h4>
+          <h4 data-i18n="plans.includedTitle">O que está sempre incluso</h4>
           <ul>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Manutenção preventiva e corretiva de computadores e notebooks</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Formatação, limpeza, otimização e remoção de vírus</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Suporte remoto ágil no horário comercial</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Orientação e boas práticas de segurança para a equipe</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Garantia de 90 dias em todos os serviços realizados</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="plans.inc1">Manutenção preventiva e corretiva de computadores e notebooks</span></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="plans.inc2">Formatação, limpeza, otimização e remoção de vírus</span></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="plans.inc3">Suporte remoto ágil no horário comercial</span></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="plans.inc4">Orientação e boas práticas de segurança para a equipe</span></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="plans.inc5">Garantia de 90 dias em todos os serviços realizados</span></li>
           </ul>
         </div>
         <div class="plans-excluded">
-          <h4>Não incluso <span>(cobrado à parte, sempre com aprovação prévia)</span></h4>
-          <p>Peças e componentes de reposição · Licenças de software · Serviços de grande porte fora do escopo do plano.</p>
+          <h4 data-i18n="plans.excludedTitle">Não incluso <span>(cobrado à parte, sempre com aprovação prévia)</span></h4>
+          <p data-i18n="plans.excludedText">Peças e componentes de reposição · Licenças de software · Serviços de grande porte fora do escopo do plano.</p>
         </div>
       </div>
     </div>
@@ -593,54 +608,54 @@
   <section id="sistemas-empresas" class="biz-systems" aria-labelledby="biz-title">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-tag">Para empresas</span>
-        <h2 class="section-title" id="biz-title">Sistemas para <span class="gradient-text">Empresas</span></h2>
-        <p class="section-subtitle">Software sob medida para quem entende de Departamento Pessoal, Fiscal e RH — não só de código</p>
+        <span class="section-tag" data-i18n="biz.tag">Para empresas</span>
+        <h2 class="section-title" id="biz-title" data-i18n="biz.title">Sistemas para <span class="gradient-text">Empresas</span></h2>
+        <p class="section-subtitle" data-i18n="biz.subtitle">Software sob medida para quem entende de Departamento Pessoal, Fiscal e RH — não só de código</p>
       </header>
 
       <div class="biz-grid">
         <div class="biz-content reveal">
-          <p class="biz-lead">
+          <p class="biz-lead" data-i18n="biz.lead">
             A maioria dos desenvolvedores entrega tela e banco de dados. A RM PrimeTI entrega isso <strong>e</strong> a regra de negócio por trás — porque conhecemos na prática a rotina de DP, o cálculo fiscal e as exigências trabalhistas que seu sistema precisa respeitar.
           </p>
-          <div class="biz-diff-list" aria-label="Nosso diferencial">
+          <div class="biz-diff-list" aria-label="Nosso diferencial" data-i18n-aria-label="biz.diffAriaLabel">
             <div class="biz-diff-item">
               <div class="biz-diff-icon" aria-hidden="true"><i class="fas fa-users-cog"></i></div>
               <div>
-                <h4>Departamento Pessoal</h4>
-                <p>Folha de pagamento, ponto, férias, rescisão e admissão com as regras da CLT aplicadas corretamente.</p>
+                <h4 data-i18n="biz.diff1.title">Departamento Pessoal</h4>
+                <p data-i18n="biz.diff1.text">Folha de pagamento, ponto, férias, rescisão e admissão com as regras da CLT aplicadas corretamente.</p>
               </div>
             </div>
             <div class="biz-diff-item">
               <div class="biz-diff-icon" aria-hidden="true"><i class="fas fa-file-invoice-dollar"></i></div>
               <div>
-                <h4>Fiscal</h4>
-                <p>Apuração de impostos, emissão de notas e obrigações acessórias integradas ao seu processo real.</p>
+                <h4 data-i18n="biz.diff2.title">Fiscal</h4>
+                <p data-i18n="biz.diff2.text">Apuração de impostos, emissão de notas e obrigações acessórias integradas ao seu processo real.</p>
               </div>
             </div>
             <div class="biz-diff-item">
               <div class="biz-diff-icon" aria-hidden="true"><i class="fas fa-user-tie"></i></div>
               <div>
-                <h4>Recursos Humanos</h4>
-                <p>Admissão, avaliação, benefícios e comunicação interna em um fluxo que reflete como sua equipe trabalha.</p>
+                <h4 data-i18n="biz.diff3.title">Recursos Humanos</h4>
+                <p data-i18n="biz.diff3.text">Admissão, avaliação, benefícios e comunicação interna em um fluxo que reflete como sua equipe trabalha.</p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="biz-card reveal">
-          <span class="biz-card-tag">Sob medida</span>
-          <h3>Sistema sob medida para sua empresa</h3>
-          <p>Levantamos a regra de negócio junto com quem vive o processo no dia a dia, e construímos um sistema que se encaixa na sua operação — não o contrário.</p>
+          <span class="biz-card-tag" data-i18n="biz.cardTag">Sob medida</span>
+          <h3 data-i18n="biz.cardTitle">Sistema sob medida para sua empresa</h3>
+          <p data-i18n="biz.cardText">Levantamos a regra de negócio junto com quem vive o processo no dia a dia, e construímos um sistema que se encaixa na sua operação — não o contrário.</p>
           <ul class="biz-card-list">
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Levantamento de requisitos com quem opera o processo</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Sistema desenvolvido e testado com sua equipe</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Suporte e ajustes após a entrega</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="biz.cardF1">Levantamento de requisitos com quem opera o processo</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="biz.cardF2">Sistema desenvolvido e testado com sua equipe</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="biz.cardF3">Suporte e ajustes após a entrega</span></li>
           </ul>
           <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Tenho%20interesse%20em%20um%20sistema%20sob%20medida%20para%20minha%20empresa%20(DP%2FFiscal%2FRH)."
              class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
-            Solicitar Proposta
+            <span data-i18n="biz.cardCta">Solicitar Proposta</span>
           </a>
         </div>
       </div>
@@ -651,9 +666,9 @@
   <section id="portfolio" class="portfolio-sec" aria-labelledby="portfolio-title">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-tag">Nosso Trabalho</span>
-        <h2 class="section-title" id="portfolio-title">Projetos <span class="gradient-text">Realizados</span></h2>
-        <p class="section-subtitle">Uma amostra dos projetos que entregamos com qualidade e dedicação</p>
+        <span class="section-tag" data-i18n="portfolio.tag">Nosso Trabalho</span>
+        <h2 class="section-title" id="portfolio-title" data-i18n="portfolio.title">Projetos <span class="gradient-text">Realizados</span></h2>
+        <p class="section-subtitle" data-i18n="portfolio.subtitle">Uma amostra dos projetos que entregamos com qualidade e dedicação</p>
       </header>
 
       <div class="portfolio-grid">
@@ -663,11 +678,11 @@
             <i class="fas fa-globe" aria-hidden="true"></i>
           </div>
           <div class="portfolio-info">
-            <span class="portfolio-cat" style="--cat:#00d4ff">Site Institucional</span>
-            <h3>Site para Clínica Médica</h3>
-            <p>Site responsivo com agendamento online, SEO local e integração ao Google Agenda.</p>
+            <span class="portfolio-cat" style="--cat:#00d4ff" data-i18n="portfolio.p1.cat">Site Institucional</span>
+            <h3 data-i18n="portfolio.p1.title">Site para Clínica Médica</h3>
+            <p data-i18n="portfolio.p1.desc">Site responsivo com agendamento online, SEO local e integração ao Google Agenda.</p>
             <div class="portfolio-tags">
-              <span>HTML/CSS</span><span>Responsivo</span><span>SEO</span>
+              <span>HTML/CSS</span><span data-i18n="portfolio.responsive">Responsivo</span><span>SEO</span>
             </div>
           </div>
         </div>
@@ -677,9 +692,9 @@
             <i class="fas fa-chart-bar" aria-hidden="true"></i>
           </div>
           <div class="portfolio-info">
-            <span class="portfolio-cat" style="--cat:#7b2fff">Sistema Web</span>
-            <h3>Sistema de Gestão Empresarial</h3>
-            <p>Dashboard com controle de vendas, estoque, clientes e relatórios em tempo real.</p>
+            <span class="portfolio-cat" style="--cat:#7b2fff" data-i18n="portfolio.p2.cat">Sistema Web</span>
+            <h3 data-i18n="portfolio.p2.title">Sistema de Gestão Empresarial</h3>
+            <p data-i18n="portfolio.p2.desc">Dashboard com controle de vendas, estoque, clientes e relatórios em tempo real.</p>
             <div class="portfolio-tags">
               <span>Node.js</span><span>PostgreSQL</span><span>Dashboard</span>
             </div>
@@ -691,9 +706,9 @@
             <i class="fas fa-network-wired" aria-hidden="true"></i>
           </div>
           <div class="portfolio-info">
-            <span class="portfolio-cat" style="--cat:#27c93f">Consultoria</span>
-            <h3>Infraestrutura de Rede Corporativa</h3>
-            <p>Projeto e implantação de rede segura para empresa com 50+ colaboradores em MG.</p>
+            <span class="portfolio-cat" style="--cat:#27c93f" data-i18n="portfolio.p3.cat">Consultoria</span>
+            <h3 data-i18n="portfolio.p3.title">Infraestrutura de Rede Corporativa</h3>
+            <p data-i18n="portfolio.p3.desc">Projeto e implantação de rede segura para empresa com 50+ colaboradores em MG.</p>
             <div class="portfolio-tags">
               <span>Firewall</span><span>VPN</span><span>Wi-Fi</span>
             </div>
@@ -705,11 +720,11 @@
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
           </div>
           <div class="portfolio-info">
-            <span class="portfolio-cat" style="--cat:#ff6b35">E-commerce</span>
-            <h3>Loja Virtual Completa</h3>
-            <p>E-commerce com carrinho, pagamento integrado (Mercado Pago) e painel de pedidos.</p>
+            <span class="portfolio-cat" style="--cat:#ff6b35" data-i18n="portfolio.p4.cat">E-commerce</span>
+            <h3 data-i18n="portfolio.p4.title">Loja Virtual Completa</h3>
+            <p data-i18n="portfolio.p4.desc">E-commerce com carrinho, pagamento integrado (Mercado Pago) e painel de pedidos.</p>
             <div class="portfolio-tags">
-              <span>WooCommerce</span><span>Pagamento</span><span>Mobile</span>
+              <span>WooCommerce</span><span data-i18n="portfolio.payment">Pagamento</span><span>Mobile</span>
             </div>
           </div>
         </div>
@@ -719,11 +734,11 @@
             <i class="fas fa-laptop-medical" aria-hidden="true"></i>
           </div>
           <div class="portfolio-info">
-            <span class="portfolio-cat" style="--cat:#7b2fff">Manutenção</span>
-            <h3>Recuperação de Notebook</h3>
-            <p>Substituição de tela, teclado e placa-mãe com 90 dias de garantia e laudo técnico.</p>
+            <span class="portfolio-cat" style="--cat:#7b2fff" data-i18n="portfolio.p5.cat">Manutenção</span>
+            <h3 data-i18n="portfolio.p5.title">Recuperação de Notebook</h3>
+            <p data-i18n="portfolio.p5.desc">Substituição de tela, teclado e placa-mãe com 90 dias de garantia e laudo técnico.</p>
             <div class="portfolio-tags">
-              <span>Hardware</span><span>Garantia 90d</span><span>Laudo</span>
+              <span data-i18n="portfolio.hardware">Hardware</span><span data-i18n="portfolio.warranty90">Garantia 90d</span><span data-i18n="portfolio.report">Laudo</span>
             </div>
           </div>
         </div>
@@ -733,11 +748,11 @@
             <i class="fas fa-desktop" aria-hidden="true"></i>
           </div>
           <div class="portfolio-info">
-            <span class="portfolio-cat" style="--cat:#00d4ff">Montagem</span>
-            <h3>PC Gamer Personalizado</h3>
-            <p>Montagem completa com seleção de componentes, testes de stress e overclock seguro.</p>
+            <span class="portfolio-cat" style="--cat:#00d4ff" data-i18n="portfolio.p6.cat">Montagem</span>
+            <h3 data-i18n="portfolio.p6.title">PC Gamer Personalizado</h3>
+            <p data-i18n="portfolio.p6.desc">Montagem completa com seleção de componentes, testes de stress e overclock seguro.</p>
             <div class="portfolio-tags">
-              <span>Hardware</span><span>RTX</span><span>Performance</span>
+              <span data-i18n="portfolio.hardware">Hardware</span><span>RTX</span><span data-i18n="portfolio.performance">Performance</span>
             </div>
           </div>
         </div>
@@ -750,9 +765,9 @@
   <section id="produtos" class="products" aria-labelledby="produtos-title">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-tag">Nosso Portfólio</span>
-        <h2 class="section-title" id="produtos-title">Produtos <span class="gradient-text">PrimeTI</span></h2>
-        <p class="section-subtitle">Sistemas desenvolvidos pela nossa equipe para transformar diferentes segmentos de negócios</p>
+        <span class="section-tag" data-i18n="products.tag">Nosso Portfólio</span>
+        <h2 class="section-title" id="produtos-title" data-i18n="products.title">Produtos <span class="gradient-text">PrimeTI</span></h2>
+        <p class="section-subtitle" data-i18n="products.subtitle">Sistemas desenvolvidos pela nossa equipe para transformar diferentes segmentos de negócios</p>
       </header>
 
       <div class="products-grid">
@@ -777,13 +792,13 @@
               </svg>
             </div>
             <div class="product-tag-wrap">
-              <span class="product-tag" style="--tag-color: #00d4ff">Rede Social</span>
+              <span class="product-tag" style="--tag-color: #00d4ff" data-i18n="products.nexus.tag">Rede Social</span>
             </div>
           </div>
           <h3 class="product-name">Nexus</h3>
-          <p class="product-description">Rede social completa para conexão, interação e criação de comunidades. Conecte pessoas, compartilhe ideias e expanda seu círculo.</p>
+          <p class="product-description" data-i18n="products.nexus.desc">Rede social completa para conexão, interação e criação de comunidades. Conecte pessoas, compartilhe ideias e expanda seu círculo.</p>
           <div class="product-link" style="--link-color: #00d4ff">
-            <span>Acessar plataforma</span>
+            <span data-i18n="products.access">Acessar plataforma</span>
             <i class="fas fa-external-link-alt" aria-hidden="true"></i>
           </div>
         </a>
@@ -807,13 +822,13 @@
               </svg>
             </div>
             <div class="product-tag-wrap">
-              <span class="product-tag" style="--tag-color: #ff6b9d">Agenda</span>
+              <span class="product-tag" style="--tag-color: #ff6b9d" data-i18n="products.belle.tag">Agenda</span>
             </div>
           </div>
           <h3 class="product-name">Belle Agenda</h3>
-          <p class="product-description">Sistema de agendamento online elegante e inteligente. Seus clientes agendam sozinhos, 24h por dia, 7 dias por semana.</p>
+          <p class="product-description" data-i18n="products.belle.desc">Sistema de agendamento online elegante e inteligente. Seus clientes agendam sozinhos, 24h por dia, 7 dias por semana.</p>
           <div class="product-link" style="--link-color: #ff6b9d">
-            <span>Acessar plataforma</span>
+            <span data-i18n="products.access">Acessar plataforma</span>
             <i class="fas fa-external-link-alt" aria-hidden="true"></i>
           </div>
         </a>
@@ -835,13 +850,13 @@
               </svg>
             </div>
             <div class="product-tag-wrap">
-              <span class="product-tag" style="--tag-color: #27c93f">Financeiro</span>
+              <span class="product-tag" style="--tag-color: #27c93f" data-i18n="products.recebi.tag">Financeiro</span>
             </div>
           </div>
           <h3 class="product-name">Recebi</h3>
-          <p class="product-description">Controle financeiro simplificado e intuitivo. Gerencie recebimentos, cobranças e fluxo de caixa com total segurança.</p>
+          <p class="product-description" data-i18n="products.recebi.desc">Controle financeiro simplificado e intuitivo. Gerencie recebimentos, cobranças e fluxo de caixa com total segurança.</p>
           <div class="product-link" style="--link-color: #27c93f">
-            <span>Acessar plataforma</span>
+            <span data-i18n="products.access">Acessar plataforma</span>
             <i class="fas fa-external-link-alt" aria-hidden="true"></i>
           </div>
         </a>
@@ -863,14 +878,14 @@
           </svg>
         </div>
         <div class="reviews-text">
-          <span class="section-tag">Prova real</span>
-          <h2 id="reviews-title">Confira nossas <span class="gradient-text">avaliações no Google</span></h2>
-          <p>Depoimento no site qualquer um escreve. Avaliação verificada no Google é de cliente de verdade. Veja o que dizem sobre a RM PrimeTI antes de fechar negócio.</p>
+          <span class="section-tag" data-i18n="reviews.tag">Prova real</span>
+          <h2 id="reviews-title" data-i18n="reviews.title">Confira nossas <span class="gradient-text">avaliações no Google</span></h2>
+          <p data-i18n="reviews.text">Depoimento no site qualquer um escreve. Avaliação verificada no Google é de cliente de verdade. Veja o que dizem sobre a RM PrimeTI antes de fechar negócio.</p>
         </div>
         <a href="https://www.google.com/search?q=RM+PrimeTI+Tecnologia&stick=H4sIAAAAAAAA_-NgU1I1qDCyNE82TLQ0TjI0SUyxME-xMqgwMzE2MTJOtUwxsUwyNkgzWcQqGuSrEFCUmZsa4qkQkpqcl5-Tn56ZCAAKnAwCQQAAAA&hl=pt-BR&mat=CbIOnjaZcAncElcBa0lj_3PEsMprJ2INwwfODiOsLOH1cBLdby0NfYqiKW4SVF5tzpHmawnt8bq1TuSEjkK3EIhoN361EIksJ9T4aHgK7yDaWTxRqGL2qvfZ-ZLaMCv5eXk&authuser=0"
            class="btn btn-primary" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-google" aria-hidden="true"></i>
-          Ver avaliações no Google
+          <span data-i18n="reviews.cta">Ver avaliações no Google</span>
         </a>
       </div>
     </div>
@@ -881,34 +896,34 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-content reveal">
-          <span class="section-tag">Quem somos</span>
-          <h2 class="section-title" id="sobre-title">Sobre a <span class="gradient-text">PrimeTI</span></h2>
-          <p class="about-text">
+          <span class="section-tag" data-i18n="about.tag">Quem somos</span>
+          <h2 class="section-title" id="sobre-title" data-i18n="about.title">Sobre a <span class="gradient-text">PrimeTI</span></h2>
+          <p class="about-text" data-i18n="about.p1">
             A <strong>RM PrimeTI Tecnologia</strong> é uma empresa especializada em soluções de tecnologia da informação, comprometida em entregar qualidade, inovação e resultados reais para nossos clientes.
           </p>
-          <p class="about-text">
+          <p class="about-text" data-i18n="about.p2">
             Atuamos em consultoria de TI, manutenção de equipamentos e desenvolvimento de sistemas, sempre com foco na excelência técnica e no sucesso do cliente. Nossa equipe de especialistas está pronta para transformar desafios tecnológicos em oportunidades de crescimento.
           </p>
-          <div class="about-values" aria-label="Nossos valores">
+          <div class="about-values" aria-label="Nossos valores" data-i18n-aria-label="about.valuesAria">
             <div class="value-item">
               <div class="value-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
               <div>
-                <h4>Confiabilidade</h4>
-                <p>Entregamos o que prometemos, sempre no prazo</p>
+                <h4 data-i18n="about.v1.title">Confiabilidade</h4>
+                <p data-i18n="about.v1.text">Entregamos o que prometemos, sempre no prazo</p>
               </div>
             </div>
             <div class="value-item">
               <div class="value-icon" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
               <div>
-                <h4>Inovação</h4>
-                <p>Sempre na vanguarda das tendências tecnológicas</p>
+                <h4 data-i18n="about.v2.title">Inovação</h4>
+                <p data-i18n="about.v2.text">Sempre na vanguarda das tendências tecnológicas</p>
               </div>
             </div>
             <div class="value-item">
               <div class="value-icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
               <div>
-                <h4>Parceria</h4>
-                <p>Crescemos junto com nossos clientes</p>
+                <h4 data-i18n="about.v3.title">Parceria</h4>
+                <p data-i18n="about.v3.text">Crescemos junto com nossos clientes</p>
               </div>
             </div>
           </div>
@@ -918,7 +933,7 @@
           <div class="tech-tiles">
             <div class="tile tile-primary">
               <i class="fas fa-server"></i>
-              <span>Servidores</span>
+              <span data-i18n="about.tileServers">Servidores</span>
             </div>
             <div class="tile tile-secondary">
               <i class="fas fa-cloud"></i>
@@ -926,7 +941,7 @@
             </div>
             <div class="tile tile-primary">
               <i class="fas fa-lock"></i>
-              <span>Segurança</span>
+              <span data-i18n="about.tileSecurity">Segurança</span>
             </div>
             <div class="tile tile-featured">
               <svg viewBox="0 0 100 50" style="width:90px">
@@ -935,7 +950,7 @@
             </div>
             <div class="tile tile-secondary">
               <i class="fas fa-database"></i>
-              <span>Dados</span>
+              <span data-i18n="about.tileData">Dados</span>
             </div>
             <div class="tile tile-primary">
               <i class="fas fa-code-branch"></i>
@@ -943,7 +958,7 @@
             </div>
             <div class="tile tile-secondary">
               <i class="fas fa-wifi"></i>
-              <span>Redes</span>
+              <span data-i18n="about.tileNetworks">Redes</span>
             </div>
             <div class="tile tile-primary">
               <i class="fas fa-mobile-alt"></i>
@@ -963,75 +978,75 @@
   <section id="faq" class="faq-sec" aria-labelledby="faq-title">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-tag">Dúvidas</span>
-        <h2 class="section-title" id="faq-title">Perguntas <span class="gradient-text">Frequentes</span></h2>
-        <p class="section-subtitle">Respondemos as principais dúvidas sobre nossos serviços</p>
+        <span class="section-tag" data-i18n="faq.tag">Dúvidas</span>
+        <h2 class="section-title" id="faq-title" data-i18n="faq.title">Perguntas <span class="gradient-text">Frequentes</span></h2>
+        <p class="section-subtitle" data-i18n="faq.subtitle">Respondemos as principais dúvidas sobre nossos serviços</p>
       </header>
 
       <div class="faq-grid reveal">
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Quanto tempo leva para desenvolver um site?</span>
+            <span data-i18n="faq.q1.q">Quanto tempo leva para desenvolver um site?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
           </button>
-          <div class="faq-a"><p>Sites institucionais simples ficam prontos em 7 a 15 dias úteis. Projetos mais complexos com sistemas integrados podem levar de 30 a 60 dias. Alinhamos o prazo antes de iniciar.</p></div>
+          <div class="faq-a"><p data-i18n="faq.q1.a">Sites institucionais simples ficam prontos em 7 a 15 dias úteis. Projetos mais complexos com sistemas integrados podem levar de 30 a 60 dias. Alinhamos o prazo antes de iniciar.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Vocês fazem atendimento em domicílio?</span>
+            <span data-i18n="faq.q2.q">Vocês fazem atendimento em domicílio?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
           </button>
-          <div class="faq-a"><p>Sim! Oferecemos atendimento técnico presencial para manutenção de computadores e notebooks, além de suporte em redes e infraestrutura de TI diretamente na sua empresa ou residência em BH e região.</p></div>
+          <div class="faq-a"><p data-i18n="faq.q2.a">Sim! Oferecemos atendimento técnico presencial para manutenção de computadores e notebooks, além de suporte em redes e infraestrutura de TI diretamente na sua empresa ou residência em BH e região.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Qual a garantia para serviços de manutenção?</span>
+            <span data-i18n="faq.q3.q">Qual a garantia para serviços de manutenção?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
           </button>
-          <div class="faq-a"><p>Oferecemos 90 dias de garantia para todos os serviços de manutenção realizados. Peças substituídas têm a garantia do fabricante. Trabalhamos exclusivamente com componentes de qualidade.</p></div>
+          <div class="faq-a"><p data-i18n="faq.q3.a">Oferecemos 90 dias de garantia para todos os serviços de manutenção realizados. Peças substituídas têm a garantia do fabricante. Trabalhamos exclusivamente com componentes de qualidade.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>É possível recuperar dados de um HD ou SSD com defeito?</span>
+            <span data-i18n="faq.q4.q">É possível recuperar dados de um HD ou SSD com defeito?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
           </button>
-          <div class="faq-a"><p>Em muitos casos sim. Realizamos diagnóstico gratuito para avaliar as chances de recuperação. O sucesso depende do tipo e extensão do dano. Entre em contato para verificar seu caso sem compromisso.</p></div>
+          <div class="faq-a"><p data-i18n="faq.q4.a">Em muitos casos sim. Realizamos diagnóstico gratuito para avaliar as chances de recuperação. O sucesso depende do tipo e extensão do dano. Entre em contato para verificar seu caso sem compromisso.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Vocês atendem empresas de todos os portes?</span>
+            <span data-i18n="faq.q5.q">Vocês atendem empresas de todos os portes?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
           </button>
-          <div class="faq-a"><p>Sim! Atendemos desde profissionais autônomos e MEIs até empresas de médio porte. Temos soluções adaptadas à realidade de cada cliente, com preços acessíveis e sem contratos abusivos.</p></div>
+          <div class="faq-a"><p data-i18n="faq.q5.a">Sim! Atendemos desde profissionais autônomos e MEIs até empresas de médio porte. Temos soluções adaptadas à realidade de cada cliente, com preços acessíveis e sem contratos abusivos.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>O site desenvolvido funciona bem no celular?</span>
+            <span data-i18n="faq.q6.q">O site desenvolvido funciona bem no celular?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
           </button>
-          <div class="faq-a"><p>Absolutamente! Todos os nossos sites são desenvolvidos com design responsivo mobile-first, funcionando perfeitamente em smartphones, tablets e desktops. O SEO para mobile também é aplicado em todos os projetos.</p></div>
+          <div class="faq-a"><p data-i18n="faq.q6.a">Absolutamente! Todos os nossos sites são desenvolvidos com design responsivo mobile-first, funcionando perfeitamente em smartphones, tablets e desktops. O SEO para mobile também é aplicado em todos os projetos.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Vocês hospedam e mantêm o site após a entrega?</span>
+            <span data-i18n="faq.q7.q">Vocês hospedam e mantêm o site após a entrega?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
           </button>
-          <div class="faq-a"><p>Sim! Oferecemos planos de hospedagem e manutenção mensal com atualizações, backups automáticos, suporte técnico e monitoramento. Você foca no seu negócio e a PrimeTI cuida da tecnologia.</p></div>
+          <div class="faq-a"><p data-i18n="faq.q7.a">Sim! Oferecemos planos de hospedagem e manutenção mensal com atualizações, backups automáticos, suporte técnico e monitoramento. Você foca no seu negócio e a PrimeTI cuida da tecnologia.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Como funciona a consultoria em TI?</span>
+            <span data-i18n="faq.q8.q">Como funciona a consultoria em TI?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
           </button>
-          <div class="faq-a"><p>Iniciamos com uma reunião diagnóstico para entender a situação da sua empresa. Em seguida, elaboramos um plano de ação com as melhores soluções dentro do seu orçamento. Acompanhamos a implementação de ponta a ponta.</p></div>
+          <div class="faq-a"><p data-i18n="faq.q8.a">Iniciamos com uma reunião diagnóstico para entender a situação da sua empresa. Em seguida, elaboramos um plano de ação com as melhores soluções dentro do seu orçamento. Acompanhamos a implementação de ponta a ponta.</p></div>
         </div>
 
       </div>
@@ -1043,47 +1058,47 @@
     <div class="container">
       <div class="qq-card reveal">
         <div class="qq-text">
-          <span class="section-tag">Sem compromisso</span>
-          <h2 id="orc-title">Solicite um <span class="gradient-text">Orçamento Rápido</span></h2>
-          <p>Preencha em menos de 1 minuto e receba uma proposta personalizada.</p>
+          <span class="section-tag" data-i18n="qq.tag">Sem compromisso</span>
+          <h2 id="orc-title" data-i18n="qq.title">Solicite um <span class="gradient-text">Orçamento Rápido</span></h2>
+          <p data-i18n="qq.subtitle">Preencha em menos de 1 minuto e receba uma proposta personalizada.</p>
           <ul class="qq-benefits">
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Resposta em até 2 horas</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Sem taxa de visita técnica</li>
-            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Orçamento 100% gratuito</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="qq.b1">Resposta em até 2 horas</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="qq.b2">Sem taxa de visita técnica</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span data-i18n="qq.b3">Orçamento 100% gratuito</span></li>
           </ul>
         </div>
         <form id="quickQuoteForm" class="qq-form" novalidate>
           <div class="qq-row">
             <div class="form-group">
-              <label for="qq-nome">Nome <span class="req">*</span></label>
-              <input type="text" id="qq-nome" name="nome" required placeholder="Seu nome">
+              <label for="qq-nome" data-i18n="form.name">Nome <span class="req">*</span></label>
+              <input type="text" id="qq-nome" name="nome" required placeholder="Seu nome" data-i18n-placeholder="form.namePlaceholder">
             </div>
             <div class="form-group">
-              <label for="qq-whats">WhatsApp <span class="req">*</span></label>
+              <label for="qq-whats" data-i18n="form.whatsapp">WhatsApp <span class="req">*</span></label>
               <input type="tel" id="qq-whats" name="telefone" required placeholder="(31) 9 0000-0000">
             </div>
           </div>
           <div class="form-group">
-            <label for="qq-servico">Serviço desejado <span class="req">*</span></label>
+            <label for="qq-servico" data-i18n="form.desiredService">Serviço desejado <span class="req">*</span></label>
             <select id="qq-servico" name="servico" required>
-              <option value="">Selecione o serviço...</option>
-              <option value="Manutenção de Computador/Notebook">Manutenção de Computador / Notebook</option>
-              <option value="Plano Mensal para Empresas">Plano Mensal para Empresas</option>
-              <option value="Montagem de Computador">Montagem de Computador / PC Gamer</option>
-              <option value="Consultoria em TI">Consultoria em TI</option>
-              <option value="Infraestrutura de Rede">Infraestrutura de Rede</option>
-              <option value="Desenvolvimento de Site">Desenvolvimento de Site</option>
-              <option value="Desenvolvimento de Sistema">Desenvolvimento de Sistema</option>
-              <option value="Outros">Outros</option>
+              <option value="" data-i18n="form.selectService">Selecione o serviço...</option>
+              <option value="Manutenção de Computador/Notebook" data-i18n="form.opt.maintenance">Manutenção de Computador / Notebook</option>
+              <option value="Plano Mensal para Empresas" data-i18n="form.opt.monthlyPlan">Plano Mensal para Empresas</option>
+              <option value="Montagem de Computador" data-i18n="form.opt.assembly">Montagem de Computador / PC Gamer</option>
+              <option value="Consultoria em TI" data-i18n="form.opt.consulting">Consultoria em TI</option>
+              <option value="Infraestrutura de Rede" data-i18n="form.opt.network">Infraestrutura de Rede</option>
+              <option value="Desenvolvimento de Site" data-i18n="form.opt.website">Desenvolvimento de Site</option>
+              <option value="Desenvolvimento de Sistema" data-i18n="form.opt.system">Desenvolvimento de Sistema</option>
+              <option value="Outros" data-i18n="form.opt.other">Outros</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="qq-descricao">Descreva rapidamente o que precisa</label>
-            <textarea id="qq-descricao" name="mensagem" rows="3" placeholder="Ex: Preciso de um site para minha clínica com formulário de agendamento..."></textarea>
+            <label for="qq-descricao" data-i18n="qq.descLabel">Descreva rapidamente o que precisa</label>
+            <textarea id="qq-descricao" name="mensagem" rows="3" placeholder="Ex: Preciso de um site para minha clínica com formulário de agendamento..." data-i18n-placeholder="qq.descPlaceholder"></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-large" id="qqSubmitBtn">
             <i class="fas fa-rocket" aria-hidden="true"></i>
-            <span>Solicitar Orçamento Grátis</span>
+            <span data-i18n="qq.submit">Solicitar Orçamento Grátis</span>
           </button>
           <div id="qqStatus" class="form-status" aria-live="polite" role="status"></div>
         </form>
@@ -1095,38 +1110,38 @@
   <section id="contato" class="contact" aria-labelledby="contato-title">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-tag">Fale conosco</span>
-        <h2 class="section-title" id="contato-title">Entre em <span class="gradient-text">Contato</span></h2>
-        <p class="section-subtitle">Estamos prontos para ajudar. Escolha o canal mais conveniente para você.</p>
+        <span class="section-tag" data-i18n="contact.tag">Fale conosco</span>
+        <h2 class="section-title" id="contato-title" data-i18n="contact.title">Entre em <span class="gradient-text">Contato</span></h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">Estamos prontos para ajudar. Escolha o canal mais conveniente para você.</p>
       </header>
 
       <div class="contact-grid">
         <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20PrimeTI%20Tecnologia."
-           class="contact-card whatsapp-card reveal" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+           class="contact-card whatsapp-card reveal" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp" data-i18n-aria-label="contact.wppAria">
           <div class="contact-icon-wrap wpp-icon" aria-hidden="true">
             <i class="fab fa-whatsapp"></i>
           </div>
           <h3>WhatsApp</h3>
           <p>(31) 99065-6645</p>
-          <span class="contact-pill wpp-pill">Iniciar conversa</span>
+          <span class="contact-pill wpp-pill" data-i18n="contact.startChat">Iniciar conversa</span>
         </a>
 
-        <a href="mailto:comercial@primetitec.com.br" class="contact-card email-card reveal" aria-label="Contato por e-mail">
+        <a href="mailto:comercial@primetitec.com.br" class="contact-card email-card reveal" aria-label="Contato por e-mail" data-i18n-aria-label="contact.emailAria">
           <div class="contact-icon-wrap email-icon" aria-hidden="true">
             <i class="fas fa-envelope"></i>
           </div>
-          <h3>E-mail</h3>
+          <h3 data-i18n="contact.email">E-mail</h3>
           <p>comercial@primetitec.com.br</p>
-          <span class="contact-pill email-pill">Enviar mensagem</span>
+          <span class="contact-pill email-pill" data-i18n="contact.sendMessage">Enviar mensagem</span>
         </a>
 
-        <div class="contact-card info-card reveal" aria-label="Dados da empresa">
+        <div class="contact-card info-card reveal" aria-label="Dados da empresa" data-i18n-aria-label="contact.infoAria">
           <div class="contact-icon-wrap info-icon" aria-hidden="true">
             <i class="fas fa-building"></i>
           </div>
           <h3>RM PrimeTI Tecnologia</h3>
           <p>CNPJ: 62.938.903/0001-75</p>
-          <span class="contact-pill info-pill">Empresa registrada</span>
+          <span class="contact-pill info-pill" data-i18n="contact.registeredCompany">Empresa registrada</span>
         </div>
       </div>
 
@@ -1136,61 +1151,61 @@
           <div class="form-section-header">
             <span class="form-section-badge">
               <i class="fas fa-edit" aria-hidden="true"></i>
-              Formulário de Contato
+              <span data-i18n="form.badge">Formulário de Contato</span>
             </span>
-            <h3>Prefere enviar uma mensagem?</h3>
-            <p>Preencha o formulário. Nossa equipe retorna em até 24h úteis.</p>
+            <h3 data-i18n="form.heading">Prefere enviar uma mensagem?</h3>
+            <p data-i18n="form.subheading">Preencha o formulário. Nossa equipe retorna em até 24h úteis.</p>
           </div>
           <form id="leadForm" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label for="f-nome">Nome completo <span class="req">*</span></label>
+                <label for="f-nome" data-i18n="form.fullName">Nome completo <span class="req">*</span></label>
                 <input type="text" id="f-nome" name="nome" required
-                       placeholder="Seu nome completo" autocomplete="name">
+                       placeholder="Seu nome completo" autocomplete="name" data-i18n-placeholder="form.fullNamePlaceholder">
               </div>
               <div class="form-group">
-                <label for="f-email">E-mail <span class="req">*</span></label>
+                <label for="f-email" data-i18n="form.email">E-mail <span class="req">*</span></label>
                 <input type="email" id="f-email" name="email" required
                        placeholder="seu@email.com" autocomplete="email">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="f-telefone">WhatsApp / Telefone</label>
+                <label for="f-telefone" data-i18n="form.whatsappPhone">WhatsApp / Telefone</label>
                 <input type="tel" id="f-telefone" name="telefone"
                        placeholder="(31) 99000-0000" autocomplete="tel">
               </div>
               <div class="form-group">
-                <label for="f-servico">Serviço de interesse</label>
+                <label for="f-servico" data-i18n="form.serviceInterest">Serviço de interesse</label>
                 <select id="f-servico" name="servico">
-                  <option value="">Selecione...</option>
-                  <option value="Consultoria em TI">Consultoria em TI</option>
-                  <option value="Montagem de Computador">Montagem de Computador</option>
-                  <option value="Manutenção de Computador/Notebook">Manutenção de Computador / Notebook</option>
-                  <option value="Plano Mensal para Empresas">Plano Mensal para Empresas</option>
-                  <option value="Desenvolvimento de Site">Desenvolvimento de Site</option>
-                  <option value="Desenvolvimento de Sistema">Desenvolvimento de Sistema</option>
+                  <option value="" data-i18n="form.select">Selecione...</option>
+                  <option value="Consultoria em TI" data-i18n="form.opt.consulting">Consultoria em TI</option>
+                  <option value="Montagem de Computador" data-i18n="form.opt.assemblyShort">Montagem de Computador</option>
+                  <option value="Manutenção de Computador/Notebook" data-i18n="form.opt.maintenance">Manutenção de Computador / Notebook</option>
+                  <option value="Plano Mensal para Empresas" data-i18n="form.opt.monthlyPlan">Plano Mensal para Empresas</option>
+                  <option value="Desenvolvimento de Site" data-i18n="form.opt.website">Desenvolvimento de Site</option>
+                  <option value="Desenvolvimento de Sistema" data-i18n="form.opt.system">Desenvolvimento de Sistema</option>
                   <option value="Nexus">Nexus</option>
                   <option value="Belle Agenda">Belle Agenda</option>
                   <option value="Recebi">Recebi</option>
-                  <option value="Sistemas para Empresas (DP/Fiscal/RH)">Sistemas para Empresas (DP/Fiscal/RH)</option>
-                  <option value="Outros">Outros</option>
+                  <option value="Sistemas para Empresas (DP/Fiscal/RH)" data-i18n="form.opt.bizSystems">Sistemas para Empresas (DP/Fiscal/RH)</option>
+                  <option value="Outros" data-i18n="form.opt.other">Outros</option>
                 </select>
               </div>
             </div>
             <div class="form-group form-full">
-              <label for="f-mensagem">Mensagem</label>
+              <label for="f-mensagem" data-i18n="form.message">Mensagem</label>
               <textarea id="f-mensagem" name="mensagem" rows="4"
-                        placeholder="Descreva o que você precisa ou tem dúvidas..."></textarea>
+                        placeholder="Descreva o que você precisa ou tem dúvidas..." data-i18n-placeholder="form.messagePlaceholder"></textarea>
             </div>
             <div class="form-actions">
               <button type="submit" class="btn btn-primary" id="submitLeadBtn">
                 <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                <span>Enviar mensagem</span>
+                <span data-i18n="form.send">Enviar mensagem</span>
               </button>
               <p class="form-privacy">
                 <i class="fas fa-lock" aria-hidden="true"></i>
-                Dados protegidos. Não enviamos spam.
+                <span data-i18n="form.privacy">Dados protegidos. Não enviamos spam.</span>
               </p>
             </div>
             <div id="leadStatus" class="form-status" aria-live="polite" role="status"></div>
@@ -1199,15 +1214,15 @@
       </div>
 
       <!-- CTA Banner -->
-      <div class="cta-banner reveal" role="complementary" aria-label="Chamada para ação">
+      <div class="cta-banner reveal" role="complementary" aria-label="Chamada para ação" data-i18n-aria-label="cta.ariaLabel">
         <div class="cta-content">
-          <h3>Pronto para transformar sua empresa com tecnologia?</h3>
-          <p>Entre em contato agora e descubra como a PrimeTI pode levar seu negócio ao próximo nível.</p>
+          <h3 data-i18n="cta.title">Pronto para transformar sua empresa com tecnologia?</h3>
+          <p data-i18n="cta.text">Entre em contato agora e descubra como a PrimeTI pode levar seu negócio ao próximo nível.</p>
         </div>
         <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20PrimeTI%20Tecnologia!"
            class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          Falar com Especialista
+          <span data-i18n="cta.button">Falar com Especialista</span>
         </a>
       </div>
     </div>
@@ -1229,7 +1244,7 @@
             <text x="112" y="31" font-family="Orbitron,Arial,sans-serif" font-weight="700" font-size="21" fill="#00d4ff">TI</text>
             <text x="50" y="43" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#4a5568" letter-spacing="3">TECNOLOGIA</text>
           </svg>
-          <p class="footer-tagline">Transformando negócios através da tecnologia com excelência e inovação desde o primeiro dia.</p>
+          <p class="footer-tagline" data-i18n="footer.tagline">Transformando negócios através da tecnologia com excelência e inovação desde o primeiro dia.</p>
           <p class="footer-cnpj">CNPJ: 62.938.903/0001-75</p>
 
           <!-- Social Links -->
@@ -1253,72 +1268,72 @@
 
           <!-- Newsletter -->
           <div class="footer-newsletter">
-            <p>Receba dicas de TI e novidades</p>
+            <p data-i18n="footer.newsletterText">Receba dicas de TI e novidades</p>
             <form id="newsletterForm" class="newsletter-form" novalidate>
               <input type="email" placeholder="seu@email.com" required
-                     aria-label="E-mail para newsletter">
-              <button type="submit" aria-label="Assinar newsletter">Assinar</button>
+                     aria-label="E-mail para newsletter" data-i18n-aria-label="footer.newsletterAria">
+              <button type="submit" aria-label="Assinar newsletter" data-i18n="footer.subscribe" data-i18n-aria-label="footer.subscribeAria">Assinar</button>
             </form>
             <div id="newsletterStatus" class="newsletter-status" aria-live="polite"></div>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>Navegação</h4>
+          <h4 data-i18n="footer.navigation">Navegação</h4>
           <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#planos-empresas">Planos para Empresas</a></li>
-            <li><a href="#sistemas-empresas">Sistemas para Empresas</a></li>
-            <li><a href="#portfolio">Portfólio</a></li>
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#sobre">Sobre nós</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><a href="/politica-de-privacidade.html">Política de Privacidade</a></li>
+            <li><a href="#inicio" data-i18n="nav.home">Início</a></li>
+            <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="#planos-empresas" data-i18n="footer.plansForCompanies">Planos para Empresas</a></li>
+            <li><a href="#sistemas-empresas" data-i18n="footer.systemsForCompanies">Sistemas para Empresas</a></li>
+            <li><a href="#portfolio" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="#produtos" data-i18n="nav.products">Produtos</a></li>
+            <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+            <li><a href="#sobre" data-i18n="footer.aboutUs">Sobre nós</a></li>
+            <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+            <li><a href="/politica-de-privacidade.html" data-i18n="footer.privacyPolicy">Política de Privacidade</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Serviços</h4>
+          <h4 data-i18n="nav.services">Serviços</h4>
           <ul>
-            <li><a href="#servicos">Consultoria em TI</a></li>
-            <li><a href="#servicos">Montagem de PCs</a></li>
-            <li><a href="#servicos">Manutenção</a></li>
-            <li><a href="#servicos">Desenvolvimento Web</a></li>
-            <li><a href="#servicos">Sistemas Personalizados</a></li>
-            <li><a href="#sistemas-empresas">Sistemas para Empresas (DP/Fiscal/RH)</a></li>
+            <li><a href="#servicos" data-i18n="services.svc2.title">Consultoria em TI</a></li>
+            <li><a href="#servicos" data-i18n="footer.pcAssembly">Montagem de PCs</a></li>
+            <li><a href="#servicos" data-i18n="footer.maintenance">Manutenção</a></li>
+            <li><a href="#servicos" data-i18n="footer.webDev">Desenvolvimento Web</a></li>
+            <li><a href="#servicos" data-i18n="footer.customSystems">Sistemas Personalizados</a></li>
+            <li><a href="#sistemas-empresas" data-i18n="footer.bizSystemsFull">Sistemas para Empresas (DP/Fiscal/RH)</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Produtos</h4>
+          <h4 data-i18n="nav.products">Produtos</h4>
           <ul>
             <li><a href="https://nexus.primetitec.com.br" target="_blank" rel="noopener">Nexus</a></li>
             <li><a href="https://belle.agenda.primetitec.com.br" target="_blank" rel="noopener">Belle Agenda</a></li>
             <li><a href="https://recebi.primetitec.com.br" target="_blank" rel="noopener">Recebi</a></li>
-            <li><a href="#sistemas-empresas">Sistemas para Empresas</a></li>
+            <li><a href="#sistemas-empresas" data-i18n="footer.systemsForCompanies">Sistemas para Empresas</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; <span id="year">2025</span> RM PrimeTI Tecnologia. Todos os direitos reservados. | <a href="/politica-de-privacidade.html" style="color:inherit;text-decoration:underline;opacity:.7">Política de Privacidade</a></p>
-        <p>Desenvolvido com <i class="fas fa-heart" style="color:#ff6b35" aria-hidden="true"></i> pela <a href="https://www.primetitec.com.br" style="color:var(--primary)">PrimeTI</a></p>
+        <p>&copy; <span id="year">2025</span> <span data-i18n="footer.rights">RM PrimeTI Tecnologia. Todos os direitos reservados.</span> | <a href="/politica-de-privacidade.html" style="color:inherit;text-decoration:underline;opacity:.7" data-i18n="footer.privacyPolicy">Política de Privacidade</a></p>
+        <p><span data-i18n="footer.madeWith">Desenvolvido com</span> <i class="fas fa-heart" style="color:#ff6b35" aria-hidden="true"></i> <span data-i18n="footer.by">pela</span> <a href="https://www.primetitec.com.br" style="color:var(--primary)">PrimeTI</a></p>
       </div>
     </div>
   </footer>
 
   <!-- Back to Top -->
-  <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+  <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo" data-i18n-aria-label="misc.backToTop">
     <i class="fas fa-chevron-up" aria-hidden="true"></i>
   </button>
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Preciso%20de%20manuten%C3%A7%C3%A3o%20no%20meu%20computador%2Fnotebook%20com%20urg%C3%AAncia."
-     class="wpp-float" target="_blank" rel="noopener noreferrer" aria-label="Preciso de manutenção — falar no WhatsApp">
+     class="wpp-float" target="_blank" rel="noopener noreferrer" aria-label="Preciso de manutenção — falar no WhatsApp" data-i18n-aria-label="misc.wppFloatAria">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    <span class="wpp-tooltip" aria-hidden="true">Preciso de manutenção!</span>
+    <span class="wpp-tooltip" aria-hidden="true" data-i18n="misc.wppTooltip">Preciso de manutenção!</span>
   </a>
 
   <!-- Supabase client -->
@@ -1327,6 +1342,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- Config: substitua com suas credenciais do Supabase -->
   <script src="js/config.js"></script>
+  <!-- Idiomas (PT-BR / PT-PT / EN) -->
+  <script src="js/i18n.js"></script>
   <!-- Forms + analytics -->
   <script src="js/forms.js"></script>
   <script src="js/main.js"></script>

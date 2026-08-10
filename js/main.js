@@ -1,5 +1,9 @@
 /* RM PrimeTI Tecnologia — main.js */
 
+function t(key, fallback) {
+  return window.i18n ? window.i18n.t(key, fallback) : fallback;
+}
+
 /* ============================================================
    PRELOADER
    ============================================================ */
@@ -125,12 +129,12 @@ function loadAnalytics() {
     const mensagem = form.querySelector('#qq-descricao').value.trim();
 
     if (!nome || !telefone || !servico) {
-      showQQStatus('error', 'Preencha os campos obrigatórios (*).');
+      showQQStatus('error', t('js.qqRequired', 'Preencha os campos obrigatórios (*).'));
       return;
     }
 
     btn.disabled = true;
-    btn.querySelector('span').textContent = 'Enviando…';
+    btn.querySelector('span').textContent = t('js.sending', 'Enviando…');
 
     try {
       if (typeof supabase !== 'undefined') {
@@ -140,16 +144,16 @@ function loadAnalytics() {
           origem: 'orcamento_rapido'
         });
       }
-      showQQStatus('success', '✓ Solicitação recebida! Entraremos em contato em breve.');
+      showQQStatus('success', t('js.qqSuccess', '✓ Solicitação recebida! Entraremos em contato em breve.'));
       form.reset();
     } catch (_) {
       // fallback: open WhatsApp
       const txt = encodeURIComponent('Olá! Sou ' + nome + ', tenho interesse em: ' + servico + '. ' + mensagem);
       window.open('https://wa.me/5531990656645?text=' + txt, '_blank');
-      showQQStatus('success', '✓ Redirecionando para o WhatsApp…');
+      showQQStatus('success', t('js.qqRedirect', '✓ Redirecionando para o WhatsApp…'));
     } finally {
       btn.disabled = false;
-      btn.querySelector('span').textContent = 'Solicitar Orçamento Grátis';
+      btn.querySelector('span').textContent = t('qq.submit', 'Solicitar Orçamento Grátis');
     }
   });
 
