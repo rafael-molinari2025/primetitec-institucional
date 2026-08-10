@@ -64,14 +64,14 @@
     'cookie.accept': 'Aceitar todos',
 
     'hero.ariaLabel': 'Secção inicial',
-    'hero.badge': 'Reparação de Computadores e Portáteis em BH e região',
-    'hero.title1': 'O seu computador',
-    'hero.title2': 'ou portátil com',
-    'hero.title3': 'problemas?',
-    'hero.subtitle': 'Reparação rápida e com garantia, diagnóstico ágil e atendimento sem demoras. Também atuamos em consultoria de TI e desenvolvimento de sites e sistemas.',
+    'hero.badge': 'Consultoria em TI e Desenvolvimento de Sistemas',
+    'hero.title1': 'A sua empresa',
+    'hero.title2': 'precisa de tecnologia',
+    'hero.title3': 'que funciona?',
+    'hero.subtitle': 'Consultoria em TI e desenvolvimento de sites e sistemas personalizados, com atendimento ágil e foco em resultados reais para o seu negócio.',
     'hero.btn1': 'Preciso de Reparação Agora',
     'hero.btn2': 'Ver Todos os Serviços',
-    'hero.pill1': 'Atendimento em BH e região',
+    'hero.pill1': 'Equipa especializada em TI',
     'hero.pill2': 'Garantia em contrato',
     'hero.pill3': 'Resposta em até 2h',
     'hero.scroll': 'Deslize para explorar',
@@ -206,7 +206,7 @@
     'about.tag': 'Quem somos',
     'about.title': 'Sobre a <span class="gradient-text">PrimeTI</span>',
     'about.p1': 'A <strong>RM PrimeTI Tecnologia</strong> é uma empresa especializada em soluções de tecnologias de informação, comprometida em entregar qualidade, inovação e resultados reais aos nossos clientes.',
-    'about.p2': 'Atuamos em consultoria de TI, manutenção de equipamentos e desenvolvimento de sistemas, sempre com foco na excelência técnica e no sucesso do cliente. A nossa equipa de especialistas está pronta para transformar desafios tecnológicos em oportunidades de crescimento.',
+    'about.p2': 'Atuamos em consultoria de TI e desenvolvimento de sistemas, sempre com foco na excelência técnica e no sucesso do cliente. A nossa equipa de especialistas está pronta para transformar desafios tecnológicos em oportunidades de crescimento.',
     'about.valuesAria': 'Os nossos valores',
     'about.v1.title': 'Confiabilidade',
     'about.v1.text': 'Entregamos o que prometemos, sempre no prazo',
@@ -312,8 +312,9 @@
     'footer.by': 'pela',
 
     'misc.backToTop': 'Voltar ao topo',
-    'misc.wppFloatAria': 'Preciso de reparação — falar no WhatsApp',
-    'misc.wppTooltip': 'Preciso de reparação!',
+    'misc.wppFloatAria': 'Contactar via WhatsApp',
+    'misc.wppTooltip': 'Fale connosco!',
+    'misc.wppFloatHref': 'https://wa.me/5531990656645?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20consultoria%20em%20TI%20e%20desenvolvimento%20de%20sistemas%20da%20PrimeTI.',
 
     'js.qqRequired': 'Preencha os campos obrigatórios (*).',
     'js.sending': 'A enviar…',
@@ -418,14 +419,14 @@
     'cookie.accept': 'Accept all',
 
     'hero.ariaLabel': 'Hero section',
-    'hero.badge': 'Computer & Laptop Repair in Belo Horizonte (BH) and region',
-    'hero.title1': 'Is your computer',
-    'hero.title2': 'or laptop having',
-    'hero.title3': 'trouble?',
-    'hero.subtitle': 'Fast, warranty-backed repairs, quick diagnostics and no-nonsense service. We also handle IT consulting and website/system development.',
+    'hero.badge': 'IT Consulting & Custom Software Development',
+    'hero.title1': 'Does your business',
+    'hero.title2': 'need technology',
+    'hero.title3': 'that works?',
+    'hero.subtitle': 'IT consulting and custom website/system development, with agile service and a focus on real results for your business.',
     'hero.btn1': 'I Need Repair Now',
     'hero.btn2': 'View All Services',
-    'hero.pill1': 'Service in BH and region',
+    'hero.pill1': 'Specialized IT team',
     'hero.pill2': 'Warranty in contract',
     'hero.pill3': 'Response within 2h',
     'hero.scroll': 'Scroll to explore',
@@ -560,7 +561,7 @@
     'about.tag': 'Who we are',
     'about.title': 'About <span class="gradient-text">PrimeTI</span>',
     'about.p1': '<strong>RM PrimeTI Tecnologia</strong> is a company specialized in information technology solutions, committed to delivering quality, innovation, and real results for our clients.',
-    'about.p2': 'We work in IT consulting, equipment maintenance, and system development, always focused on technical excellence and client success. Our team of specialists is ready to turn technology challenges into growth opportunities.',
+    'about.p2': 'We work in IT consulting and system development, always focused on technical excellence and client success. Our team of specialists is ready to turn technology challenges into growth opportunities.',
     'about.valuesAria': 'Our values',
     'about.v1.title': 'Reliability',
     'about.v1.text': 'We deliver what we promise, always on time',
@@ -666,8 +667,9 @@
     'footer.by': 'by',
 
     'misc.backToTop': 'Back to top',
-    'misc.wppFloatAria': 'I need repair — talk on WhatsApp',
-    'misc.wppTooltip': 'I need repair!',
+    'misc.wppFloatAria': 'Contact us on WhatsApp',
+    'misc.wppTooltip': 'Chat with us!',
+    'misc.wppFloatHref': 'https://wa.me/5531990656645?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20consultoria%20em%20TI%20e%20desenvolvimento%20de%20sistemas%20da%20PrimeTI.',
 
     'js.qqRequired': 'Please fill in the required fields (*).',
     'js.sending': 'Sending…',
@@ -763,7 +765,8 @@
     { attr: 'data-i18n',            prop: 'html' },
     { attr: 'data-i18n-aria-label', prop: 'aria-label' },
     { attr: 'data-i18n-placeholder',prop: 'placeholder' },
-    { attr: 'data-i18n-title',      prop: 'title' }
+    { attr: 'data-i18n-title',      prop: 'title' },
+    { attr: 'data-i18n-href',       prop: 'href' }
   ];
 
   function captureOriginals() {
@@ -815,6 +818,8 @@
       });
     });
 
+    applyMarketVisibility(lang);
+
     document.documentElement.lang = lang;
 
     var page = document.body.getAttribute('data-page');
@@ -832,6 +837,22 @@
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (_) { /* ignore */ }
 
     document.dispatchEvent(new CustomEvent('primetitec:langchange', { detail: { lang: lang } }));
+  }
+
+  function applyMarketVisibility(lang) {
+    var hide = lang !== DEFAULT_LANG;
+    document.body.classList.toggle('lang-intl', hide);
+    document.querySelectorAll('[data-br-only]').forEach(function (el) {
+      if (el.tagName === 'OPTION') {
+        el.hidden = hide;
+        if (hide && el.selected) {
+          var select = el.parentElement;
+          if (select) select.selectedIndex = 0;
+        }
+      } else {
+        el.classList.toggle('lang-hidden', hide);
+      }
+    });
   }
 
   function updateSwitcherUI(lang) {

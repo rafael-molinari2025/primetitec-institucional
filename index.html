@@ -155,7 +155,7 @@
         <ul class="nav-menu" id="navMenu" role="menubar">
           <li role="none"><a href="#inicio"     class="nav-link" role="menuitem" data-i18n="nav.home">Início</a></li>
           <li role="none"><a href="#servicos"  class="nav-link" role="menuitem" data-i18n="nav.services">Serviços</a></li>
-          <li role="none"><a href="#planos-empresas" class="nav-link" role="menuitem" data-i18n="nav.plans">Planos</a></li>
+          <li role="none" data-br-only><a href="#planos-empresas" class="nav-link" role="menuitem" data-i18n="nav.plans">Planos</a></li>
           <li role="none"><a href="#sistemas-empresas" class="nav-link" role="menuitem" data-i18n="nav.systems">Sistemas</a></li>
           <li role="none"><a href="#portfolio" class="nav-link" role="menuitem" data-i18n="nav.portfolio">Portfólio</a></li>
           <li role="none"><a href="#produtos"  class="nav-link" role="menuitem" data-i18n="nav.products">Produtos</a></li>
@@ -213,7 +213,7 @@
 
       <div class="hero-buttons" style="--delay:1s">
         <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Preciso%20de%20manuten%C3%A7%C3%A3o%20no%20meu%20computador%2Fnotebook%20com%20urg%C3%AAncia."
-           class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+           class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-br-only>
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
           <span data-i18n="hero.btn1">Preciso de Manutenção Agora</span>
         </a>
@@ -286,7 +286,7 @@
       <div class="services-grid">
 
         <!-- Service 1 — Maintenance (FEATURED) -->
-        <article class="service-card featured reveal" aria-label="Montagem e Manutenção de Computadores" data-i18n-aria-label="services.svc1.ariaLabel">
+        <article class="service-card featured reveal" aria-label="Montagem e Manutenção de Computadores" data-i18n-aria-label="services.svc1.ariaLabel" data-br-only>
           <div class="service-featured-badge" aria-label="Serviço mais popular" data-i18n="services.mostPopular" data-i18n-aria-label="services.mostPopularAria">Mais Popular</div>
           <div class="service-illustration" aria-hidden="true">
             <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -524,7 +524,7 @@
   </section>
 
   <!-- ======= PLANS FOR COMPANIES (MONTHLY MAINTENANCE CONTRACT) ======= -->
-  <section id="planos-empresas" class="plans-sec" aria-labelledby="plans-title">
+  <section id="planos-empresas" class="plans-sec" aria-labelledby="plans-title" data-br-only>
     <div class="container">
       <header class="section-header reveal">
         <span class="section-tag" data-i18n="plans.tag">Planos e investimento</span>
@@ -729,7 +729,7 @@
           </div>
         </div>
 
-        <div class="portfolio-card reveal">
+        <div class="portfolio-card reveal" data-br-only>
           <div class="portfolio-thumb" style="--cat:#7b2fff">
             <i class="fas fa-laptop-medical" aria-hidden="true"></i>
           </div>
@@ -743,7 +743,7 @@
           </div>
         </div>
 
-        <div class="portfolio-card reveal">
+        <div class="portfolio-card reveal" data-br-only>
           <div class="portfolio-thumb" style="--cat:#00d4ff">
             <i class="fas fa-desktop" aria-hidden="true"></i>
           </div>
@@ -993,7 +993,7 @@
           <div class="faq-a"><p data-i18n="faq.q1.a">Sites institucionais simples ficam prontos em 7 a 15 dias úteis. Projetos mais complexos com sistemas integrados podem levar de 30 a 60 dias. Alinhamos o prazo antes de iniciar.</p></div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item" data-br-only>
           <button class="faq-q" aria-expanded="false">
             <span data-i18n="faq.q2.q">Vocês fazem atendimento em domicílio?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
@@ -1001,7 +1001,7 @@
           <div class="faq-a"><p data-i18n="faq.q2.a">Sim! Oferecemos atendimento técnico presencial para manutenção de computadores e notebooks, além de suporte em redes e infraestrutura de TI diretamente na sua empresa ou residência em BH e região.</p></div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item" data-br-only>
           <button class="faq-q" aria-expanded="false">
             <span data-i18n="faq.q3.q">Qual a garantia para serviços de manutenção?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
@@ -1009,7 +1009,7 @@
           <div class="faq-a"><p data-i18n="faq.q3.a">Oferecemos 90 dias de garantia para todos os serviços de manutenção realizados. Peças substituídas têm a garantia do fabricante. Trabalhamos exclusivamente com componentes de qualidade.</p></div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item" data-br-only>
           <button class="faq-q" aria-expanded="false">
             <span data-i18n="faq.q4.q">É possível recuperar dados de um HD ou SSD com defeito?</span>
             <i class="fas fa-plus" aria-hidden="true"></i>
@@ -1082,9 +1082,9 @@
             <label for="qq-servico" data-i18n="form.desiredService">Serviço desejado <span class="req">*</span></label>
             <select id="qq-servico" name="servico" required>
               <option value="" data-i18n="form.selectService">Selecione o serviço...</option>
-              <option value="Manutenção de Computador/Notebook" data-i18n="form.opt.maintenance">Manutenção de Computador / Notebook</option>
-              <option value="Plano Mensal para Empresas" data-i18n="form.opt.monthlyPlan">Plano Mensal para Empresas</option>
-              <option value="Montagem de Computador" data-i18n="form.opt.assembly">Montagem de Computador / PC Gamer</option>
+              <option value="Manutenção de Computador/Notebook" data-i18n="form.opt.maintenance" data-br-only>Manutenção de Computador / Notebook</option>
+              <option value="Plano Mensal para Empresas" data-i18n="form.opt.monthlyPlan" data-br-only>Plano Mensal para Empresas</option>
+              <option value="Montagem de Computador" data-i18n="form.opt.assembly" data-br-only>Montagem de Computador / PC Gamer</option>
               <option value="Consultoria em TI" data-i18n="form.opt.consulting">Consultoria em TI</option>
               <option value="Infraestrutura de Rede" data-i18n="form.opt.network">Infraestrutura de Rede</option>
               <option value="Desenvolvimento de Site" data-i18n="form.opt.website">Desenvolvimento de Site</option>
@@ -1180,9 +1180,9 @@
                 <select id="f-servico" name="servico">
                   <option value="" data-i18n="form.select">Selecione...</option>
                   <option value="Consultoria em TI" data-i18n="form.opt.consulting">Consultoria em TI</option>
-                  <option value="Montagem de Computador" data-i18n="form.opt.assemblyShort">Montagem de Computador</option>
-                  <option value="Manutenção de Computador/Notebook" data-i18n="form.opt.maintenance">Manutenção de Computador / Notebook</option>
-                  <option value="Plano Mensal para Empresas" data-i18n="form.opt.monthlyPlan">Plano Mensal para Empresas</option>
+                  <option value="Montagem de Computador" data-i18n="form.opt.assemblyShort" data-br-only>Montagem de Computador</option>
+                  <option value="Manutenção de Computador/Notebook" data-i18n="form.opt.maintenance" data-br-only>Manutenção de Computador / Notebook</option>
+                  <option value="Plano Mensal para Empresas" data-i18n="form.opt.monthlyPlan" data-br-only>Plano Mensal para Empresas</option>
                   <option value="Desenvolvimento de Site" data-i18n="form.opt.website">Desenvolvimento de Site</option>
                   <option value="Desenvolvimento de Sistema" data-i18n="form.opt.system">Desenvolvimento de Sistema</option>
                   <option value="Nexus">Nexus</option>
@@ -1283,7 +1283,7 @@
           <ul>
             <li><a href="#inicio" data-i18n="nav.home">Início</a></li>
             <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
-            <li><a href="#planos-empresas" data-i18n="footer.plansForCompanies">Planos para Empresas</a></li>
+            <li data-br-only><a href="#planos-empresas" data-i18n="footer.plansForCompanies">Planos para Empresas</a></li>
             <li><a href="#sistemas-empresas" data-i18n="footer.systemsForCompanies">Sistemas para Empresas</a></li>
             <li><a href="#portfolio" data-i18n="nav.portfolio">Portfólio</a></li>
             <li><a href="#produtos" data-i18n="nav.products">Produtos</a></li>
@@ -1298,8 +1298,8 @@
           <h4 data-i18n="nav.services">Serviços</h4>
           <ul>
             <li><a href="#servicos" data-i18n="services.svc2.title">Consultoria em TI</a></li>
-            <li><a href="#servicos" data-i18n="footer.pcAssembly">Montagem de PCs</a></li>
-            <li><a href="#servicos" data-i18n="footer.maintenance">Manutenção</a></li>
+            <li data-br-only><a href="#servicos" data-i18n="footer.pcAssembly">Montagem de PCs</a></li>
+            <li data-br-only><a href="#servicos" data-i18n="footer.maintenance">Manutenção</a></li>
             <li><a href="#servicos" data-i18n="footer.webDev">Desenvolvimento Web</a></li>
             <li><a href="#servicos" data-i18n="footer.customSystems">Sistemas Personalizados</a></li>
             <li><a href="#sistemas-empresas" data-i18n="footer.bizSystemsFull">Sistemas para Empresas (DP/Fiscal/RH)</a></li>
@@ -1331,7 +1331,7 @@
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/5531990656645?text=Ol%C3%A1!%20Preciso%20de%20manuten%C3%A7%C3%A3o%20no%20meu%20computador%2Fnotebook%20com%20urg%C3%AAncia."
-     class="wpp-float" target="_blank" rel="noopener noreferrer" aria-label="Preciso de manutenção — falar no WhatsApp" data-i18n-aria-label="misc.wppFloatAria">
+     class="wpp-float" target="_blank" rel="noopener noreferrer" aria-label="Preciso de manutenção — falar no WhatsApp" data-i18n-aria-label="misc.wppFloatAria" data-i18n-href="misc.wppFloatHref">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
     <span class="wpp-tooltip" aria-hidden="true" data-i18n="misc.wppTooltip">Preciso de manutenção!</span>
   </a>
