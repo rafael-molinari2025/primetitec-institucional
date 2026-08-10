@@ -16,7 +16,11 @@ python -m http.server 8080   # then open http://localhost:8080/index.html
 npx serve .
 ```
 
-There are no automated tests. When verifying UI changes, open the page in a browser (or drive it headlessly) and check the console for errors — see the `run` skill for the puppeteer-core pattern used against the cached Chromium in this environment (no `chromium-cli` installed here).
+There are no automated tests. When verifying UI changes, open the page in a browser (or drive it headlessly) and check the console for errors.
+
+`chromium-cli` is not installed in this environment. To drive a headless browser instead: `npm install puppeteer-core` in a scratch directory, then launch it with `executablePath` pointing at the cached Chromium binary under `~/.cache/puppeteer/chrome/*/chrome-win64/chrome.exe` (glob for the version dir — don't hardcode it, it changes when the cache updates). Serve the site first (`python -m http.server`), then `page.goto('http://localhost:8080/index.html')`.
+
+Git commands in this environment may fail with `detected dubious ownership in repository` (the working directory owner differs from the current OS user). Don't run `git config --global --add safe.directory ...` (that permanently changes global git config) — instead pass it per-invocation: `git -c safe.directory="$(pwd)" status`.
 
 ## Pages
 
@@ -55,6 +59,10 @@ Single stylesheet, no preprocessor. Design tokens (colors, gradients, fonts, rad
 ## Backend (Supabase)
 
 `supabase/schema.sql` is the source of truth for the database — idempotent, safe to re-run in the Supabase SQL editor. Tables: `leads`, `newsletter`, `page_views`, all with RLS enabled (`anon` role can only `INSERT`; `authenticated` has full access). Includes convenience views `v_leads_novos`, `v_visitas_por_dia`, `v_newsletter_ativos`. When changing form fields in the HTML/JS, keep the columns here in sync.
+
+## Conventions
+
+Commit messages follow Conventional Commits (`feat:`, `fix:`, `docs:`) with descriptions in Portuguese (see `git log`).
 
 ## Third-party integrations
 
